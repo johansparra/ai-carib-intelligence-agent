@@ -42,6 +42,7 @@ El agente automáticamente:
 - Actualizará todos los README.md necesarios
 - Corregirá automáticamente el formato Markdown en archivos `.md`, incluyendo saltos de línea después de encabezados y alrededor de listas tras `:`
 - Regenerará los diagramas Mermaid
+- Gestionará commits Git automáticos
 - Validará la consistencia
 - Confirmará los cambios completados
 
@@ -78,4 +79,28 @@ El agente automáticamente:
 - Los diagramas Mermaid se regenerarán automáticamente
 - Se aplicará corrección automática de formato Markdown en archivos `.md`, especialmente encabezados `##` y `###`
 - Se aplicará corrección automática de listas tras `:` para evitar MD032
+- Se gestionarán commits Git automáticos después de cambios
 - La documentación reflejará la estructura actual del proyecto
+
+## Gestión Automática de Git
+
+### Commits Automáticos
+
+Después de cada cambio en la documentación, el agente crea automáticamente:
+
+- `git add .` - agrega todos los archivos modificados
+- `git commit -m "mensaje descriptivo"` - commit con mensaje siguiendo convenciones
+- `git push origin main` - sube cambios a rama principal
+
+### Convenciones de Mensajes
+
+- `docs: sync README.md diagrams` - actualizaciones de diagramas
+- `docs: add new agent structure-monitor` - nuevas carpetas/agentes
+- `docs: fix markdown formatting` - correcciones de formato
+- `feat: add gh-cli skill` - nuevas funcionalidades
+
+### Integración con GitHub CLI
+
+- Crea PRs automáticamente cuando sea necesario
+- Maneja merges de documentación
+- Mantiene sincronización con repositorio remoto

@@ -42,6 +42,11 @@ Este prompt se ejecuta automáticamente cuando:
    - Mantener historial de cambios
    - Corregir el formato Markdown de los archivos `.md`, incluyendo saltos de línea después de encabezados `##` y `###`
 
+4. **Gestionar commits Git**
+   - Crear commits automáticos para cambios en documentación
+   - Usar mensajes descriptivos siguiendo convenciones
+   - Hacer push a rama principal cuando sea apropiado
+
 ### Reglas de Sincronización
 
 **Estructura de Carpetas**
@@ -83,6 +88,26 @@ Después de cada actualización:
 - Asegurar que todas las referencias sean correctas
 - Validar que la documentación es consistente
 
+### Gestión de Git y Commits
+
+Después de actualizar la documentación, gestionar automáticamente el control de versiones:
+
+**Crear commits para cambios en documentación:**
+- `git add .` - agregar todos los cambios
+- `git commit -m "docs: sync documentation and diagrams"` - commit con mensaje descriptivo
+- `git push origin main` - subir cambios a rama principal
+
+**Convenciones de mensajes de commit:**
+- `docs: sync README.md diagrams` - para actualizaciones de diagramas
+- `docs: add new agent structure-monitor` - para nuevas carpetas/agentes
+- `docs: fix markdown formatting` - para correcciones de formato
+- `feat: add gh-cli skill` - para nuevas funcionalidades
+
+**Integración con GitHub CLI:**
+- Usar `gh pr create` para crear PRs cuando sea necesario
+- Usar `gh pr merge` para merge automático de PRs de documentación
+- Mantener sincronización con repositorio remoto
+
 ---
 
 ## Ejecución
@@ -122,6 +147,16 @@ Cambio detectado: Modificación en agents/dynatrace/logic.md
 → Sincronizar cambios en raíz README.md
 ```
 
+### Ejemplo 4: Commit automático después de cambios
+
+```
+Cambios aplicados: 3 archivos modificados
+→ git add .
+→ git commit -m "docs: sync documentation after agent changes"
+→ git push origin main
+→ Cambios subidos exitosamente
+```
+
 ---
 
 ## Notas Importantes
@@ -129,4 +164,5 @@ Cambio detectado: Modificación en agents/dynatrace/logic.md
 - **No modificar manualmente** diagramas en README.md - el agente se encargará
 - **Preservar formato** - mantener estructura Mermaid consistente
 - **Documentar cambios** - incluir comentarios en commits automáticos
+- **Gestionar Git automáticamente** - commits y push se hacen automáticamente después de cambios
 - **Alertar sobre inconsistencias** - si detecta desincronización, reportar

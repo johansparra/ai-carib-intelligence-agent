@@ -131,6 +131,7 @@ ai-carib-intelligence-agent/
 - Detecta cambios automáticamente
 - Sincroniza documentación
 - Actualiza diagramas Mermaid
+- Gestiona commits Git automáticos
 - Funciona sin intervención manual
 
 ## 🤖 Agente Structure Monitor
@@ -141,6 +142,7 @@ Un agente especial que **automáticamente**:
 - Actualiza todos los README.md necesarios
 - Regenera diagramas Mermaid
 - Sincroniza referencias cruzadas
+- Gestiona commits Git y push automático
 - Valida consistencia de documentación
 
 **No requiere activación manual** - funciona transparentemente en segundo plano.

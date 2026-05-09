@@ -42,6 +42,15 @@ Valida que la documentación sea consistente:
 - Valida que la documentación refleje la estructura actual
 - Verifica el formato Markdown de los archivos `.md`, incluyendo la regla de saltos de línea después de encabezados
 
+### 5. `manageGitCommits()`
+
+Gestionar automáticamente commits Git después de cambios en documentación:
+
+- Crear commits con mensajes descriptivos siguiendo convenciones
+- Hacer push automático a rama principal
+- Integrar con GitHub CLI para operaciones avanzadas
+- Mantener historial limpio de cambios de documentación
+
 ## 📊 Tipos de Cambios Detectables
 
 ```mermaid
@@ -75,9 +84,11 @@ graph TB
     I --> SM
     
     SM --> UPDATE["Actualizar READMEs y Diagramas"]
+    UPDATE --> GIT["Gestionar Commits Git"]
     
     style SM fill:#2ca02c
     style UPDATE fill:#90ee90
+    style GIT fill:#1f77b4
 ```
 
 ## 🔌 Integración con el Proyecto
