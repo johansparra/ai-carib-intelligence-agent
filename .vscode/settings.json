@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^cd /d d:\\\\Claude\\\\Copilot\\\\ai-carib-intelligence-agent; python -c 'import re, pathlib; root=pathlib\\.Path\\(\"\\.\"\\)\\.resolve\\(\\); files=sorted\\(root\\.glob\\(\"\\*\\*/\\*\\.md\"\\)\\); found=False; \nfor p in files:\n    text=p\\.read_text\\(encoding=\"utf-8\"\\)\n    lines=text\\.splitlines\\(\\)\n    bad=\\[\\]\n    for i,line in enumerate\\(lines\\):\n        if re\\.match\\(r\"\\^\\(#\\{1,6\\}\\)\\\\s\\+\\[\\^#\\]\\.\\*\\$\", line\\):\n            if i\\+1 < len\\(lines\\) and lines\\[i\\+1\\]\\.strip\\(\\) != \"\":\n                bad\\.append\\(\\(i\\+1,line\\)\\)\n    if bad:\n        found=True\n        print\\(p\\)\n        for lineno,line in bad:\n            print\\(f\"  \\{lineno\\}: \\{line\\}\"\\)\nif not found:\n    print\\(\"no-issues\"\\)'$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

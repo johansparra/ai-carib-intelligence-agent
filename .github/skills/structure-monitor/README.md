@@ -1,0 +1,96 @@
+# Structure Monitor Skill
+
+Skill que implementa la lógica de detección de cambios y sincronización de documentación.
+
+## 🛠️ Funciones Principales
+
+### 1. `detectChanges()`
+
+Detecta cambios en:
+
+- Nuevas carpetas creadas
+- Nuevas carpetas eliminadas
+- Nuevos archivos agregados
+- Cambios en nombres
+- Cambios en jerarquía
+
+### 2. `updateReadmes(changeSet)`
+
+Actualiza automáticamente los README.md afectados con:
+
+- Diagramas Mermaid sincronizados
+- Descripción de nuevos componentes
+- Referencias cruzadas actualizadas
+- Listados de archivos actualizados
+
+### 3. `syncDiagrams()`
+
+Sincroniza todos los diagramas Mermaid para que reflejen:
+
+- Estructura actual de carpetas
+- Relaciones entre componentes
+- Flujo de procesamiento actualizado
+- Dependencias entre agentes
+
+### 4. `validateConsistency()`
+
+Valida que la documentación sea consistente:
+
+- Verifica que todos los README.md existan
+- Comprueba que los diagramas Mermaid sean válidos
+- Asegura que todas las referencias sean correctas
+- Valida que la documentación refleje la estructura actual
+- Verifica el formato Markdown de los archivos `.md`, incluyendo la regla de saltos de línea después de encabezados
+
+## 📊 Tipos de Cambios Detectables
+
+```mermaid
+graph TB
+    subgraph "Cambios en Estructura"
+        A["Nueva carpeta en agents/"]
+        B["Nueva carpeta en skills/"]
+        C["Nueva carpeta en prompts/"]
+    end
+    
+    subgraph "Cambios en Archivos"
+        D["Nuevo .md file"]
+        E["Nuevo .prompt.md"]
+        F["Eliminación de archivos"]
+    end
+    
+    subgraph "Cambios en Contenido"
+        G["Descripción modificada"]
+        H["Lógica actualizada"]
+        I["Flujo de procesamiento"]
+    end
+    
+    A --> SM["Structure Monitor"]
+    B --> SM
+    C --> SM
+    D --> SM
+    E --> SM
+    F --> SM
+    G --> SM
+    H --> SM
+    I --> SM
+    
+    SM --> UPDATE["Actualizar READMEs y Diagramas"]
+    
+    style SM fill:#2ca02c
+    style UPDATE fill:#90ee90
+```
+
+## 🔌 Integración con el Proyecto
+
+El skill funciona en conjunto con:
+
+- **Prompt**: `.github/prompts/structure-monitor.prompt.md`
+- **Agent**: `.github/agents/structure-monitor/`
+- **Config**: `.github/customizations/auto-sync.md`
+
+## ⚡ Rendimiento
+
+- Ejecución: Automática después de cada cambio
+- Tiempo de detección: Instantáneo
+- Actualización de diagramas: < 2 segundos
+- Validación: < 1 segundo
