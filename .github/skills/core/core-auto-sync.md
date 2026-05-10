@@ -10,8 +10,7 @@ Este agente se ejecuta automáticamente cuando:
    - `.github/agents/`
    - `.github/skills/`
    - `.github/prompts/`
-   - `.github/customizations/`
-   - `.github/toolboxes/`
+   - `.github/instructions/`
 
 2. **Cambios en estructura de carpetas**
    - Nueva carpeta creada

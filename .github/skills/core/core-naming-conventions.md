@@ -31,11 +31,11 @@ agents/core/core-ai-team-dev.agent.md
 
 | Tipo de archivo | Convención | Ejemplo |
 | ---------------- | ------------ | --------- |
-| Agente Copilot | `{prefijo}-{nombre}.agent.md` | `core-ai-team-dev.agent.md` |
-| Prompt Copilot | `{prefijo}-{nombre}.prompt.md` | `dyn-chatbot.prompt.md` |
-| Skill / documentación | `README.md` dentro de carpeta prefijada | `skills/dyn/dyn-queries/README.md` |
-| Toolbox | `{nombre-descriptivo}.md` | `report-templates.md` |
-| Customización | `{nombre-descriptivo}.md` | `naming-conventions.md` |
+| Agente (carpeta) | `agents/{dom}/{prefijo}-{nombre}/README.md` | `agents/dyn/dyn-analyst/README.md` |
+| Agente (archivo) | `{prefijo}-{nombre}.agent.md` | `agents/core/core-ai-team-dev.agent.md` |
+| Prompt | `{prefijo}-{nombre}.prompt.md` | `prompts/dyn/dyn-chatbot.prompt.md` |
+| Skill | `skills/{dom}/{prefijo}-{nombre}/README.md` | `skills/dyn/dyn-queries/README.md` |
+| Instrucción | `{prefijo}-{nombre}.instructions.md` | `instructions/core-naming-conventions.instructions.md` |
 
 Todos los nombres de archivos y carpetas usan `kebab-case` (minúsculas con guiones).
 
@@ -74,14 +74,25 @@ skills/{nombre-skill}/
 └── README.md   ← configuración, ejemplos, referencia técnica
 ```
 
-### Cuándo usar Toolboxes (`.github/toolboxes/`)
+### Cuándo usar `instructions/` (`.github/instructions/`)
 
-Usar toolboxes para:
+Crear una instrucción cuando:
 
-- Plantillas compartidas por múltiples agentes
-- Glosarios y definiciones comunes
-- Umbrales y configuración que aplica a todo el proyecto
-- Herramientas auxiliares sin pertenencia a un agente específico
+- Contiene **reglas que deben estar siempre activas** (sin activación manual)
+- Aplica a todos los archivos (`applyTo: "**"`) o a un tipo específico (`applyTo: "**/*.md"`)
+- Es más corta y directa que un skill — reglas, no conocimiento técnico
+
+Estructura de un archivo instructions:
+
+```markdown
+---
+applyTo: "**"
+---
+
+# Título de la instrucción
+
+Reglas o convenciones...
+```
 
 ---
 
@@ -100,7 +111,7 @@ docs: fix markdown formatting
 ```bash
 feat: add {nombre-agente} agent
 feat: add {nombre-skill} skill
-feat: add {nombre} to toolboxes
+feat: add {nombre} instruction
 ```
 
 ### Para cambios en prompts
