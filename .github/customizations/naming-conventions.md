@@ -7,7 +7,7 @@ Convenciones de nombres y estructura para todos los archivos del proyecto.
 ## Nombres de Archivos
 
 | Tipo de archivo | Convención | Ejemplo |
-|----------------|------------|---------|
+| ---------------- | ------------ | --------- |
 | Agente Copilot | `{nombre}.agent.md` | `ai-team-dev.agent.md` |
 | Prompt Copilot | `{nombre}.prompt.md` | `dynatrace-chatbot.prompt.md` |
 | Skill / documentación | `README.md` dentro de su carpeta | `skills/dynatrace/README.md` |
@@ -31,7 +31,7 @@ Crear un nuevo agente cuando:
 
 Estructura mínima del agente:
 
-```
+```bash
 agents/{nombre-agente}/
 └── README.md   ← descripción, propósito, input/output, cómo activar
 ```
@@ -46,7 +46,7 @@ Crear un nuevo skill cuando:
 
 Estructura mínima del skill:
 
-```
+```bash
 skills/{nombre-skill}/
 └── README.md   ← configuración, ejemplos, referencia técnica
 ```
@@ -66,7 +66,7 @@ Usar toolboxes para:
 
 ### Para cambios en documentación (automáticos vía Structure Monitor)
 
-```
+```bash
 docs: sync README.md diagrams
 docs: add new agent {nombre}
 docs: fix markdown formatting
@@ -74,7 +74,7 @@ docs: fix markdown formatting
 
 ### Para nuevas funcionalidades
 
-```
+```bash
 feat: add {nombre-agente} agent
 feat: add {nombre-skill} skill
 feat: add {nombre} to toolboxes
@@ -82,20 +82,20 @@ feat: add {nombre} to toolboxes
 
 ### Para cambios en prompts
 
-```
+```bash
 feat: implement {nombre} prompt
 refactor: update {nombre} prompt instructions
 ```
 
 ### Para correcciones
 
-```
+```bash
 fix: {descripción del problema corregido}
 ```
 
 ### Commits atómicos — una responsabilidad por commit
 
-```
+```bash
 ✅ feat: add incident-responder agent
 ✅ feat: add incident-responder skill
 ❌ feat: add incident-responder agent and skill and update readme  ← demasiado
@@ -111,6 +111,12 @@ Aplicadas automáticamente por el agente Structure Monitor:
 2. **Listas después de `:` deben estar rodeadas de líneas en blanco** (MD032)
 3. **Una sola línea en blanco entre secciones** (no dos o más)
 4. **Tablas con encabezado y separador** en cada columna
+5. **Separadores de tabla con espacios** — siempre dejar espacio después de cada `|` en la fila separadora:
+   - ❌ `|----------|----------------|`
+   - ✅ `| ---------- | ---------------- |`
+6. **Bloques de código con lenguaje obligatorio** — nunca dejar el bloque vacío:
+   - ❌ ` ``` `
+   - ✅ ` ```bash `, ` ```markdown `, ` ```json `, ` ```dql `, ` ```http `, ` ```log `, ` ```text `
 
 ---
 

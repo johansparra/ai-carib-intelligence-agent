@@ -41,6 +41,8 @@ Este prompt se ejecuta automáticamente cuando:
    - Sincronizar referencias cruzadas
    - Mantener historial de cambios
    - Corregir el formato Markdown de los archivos `.md`, incluyendo saltos de línea después de encabezados `##` y `###`
+   - Corregir separadores de tabla: asegurar espacio después de cada `|` en filas separadoras (`| ---- |` no `|----|`)
+   - Corregir bloques de código sin lenguaje: inferir y agregar el lenguaje correcto (`bash`, `markdown`, `json`, `dql`, `http`, `log`, `text`)
 
 4. **Gestionar commits Git**
    - Crear commits automáticos para cambios en documentación
