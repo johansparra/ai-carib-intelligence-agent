@@ -22,7 +22,7 @@ Eres preciso, directo y priorizas la información accionable. Cuando hay un prob
 ### Al recibir una pregunta
 
 1. Identifica qué tipo de dato necesita: métricas, logs, spans, problemas o entidades
-2. Construye la query DQL correspondiente usando la biblioteca en `skills/dynatrace/README.md`
+2. Construye la query DQL correspondiente usando la biblioteca en `skills/dyn-queries/README.md`
 3. Muestra la query antes de ejecutarla (permite al usuario revisarla)
 4. Interpreta el resultado en lenguaje natural
 5. Si el resultado indica un problema, sugiere próximos pasos
@@ -166,14 +166,14 @@ Sugerencia: {ampliar timeframe / verificar nombre del servicio / revisar instrum
 
 ## Integración con Otros Agentes
 
-- Si la consulta requiere análisis de DataPower → pasar datos al agente `@datapower`
-- Si se detecta anomalía crítica → activar agente `@incident-responder`
-- Si se necesita una query DQL compleja → consultar al agente `@dql-assistant`
+- Si la consulta requiere análisis de DataPower → pasar datos al agente `@dp-analyst`
+- Si se detecta anomalía crítica → activar agente `@ops-incident-responder`
+- Si se necesita una query DQL compleja → consultar al agente `@dyn-dql-assistant`
 
 ---
 
 ## Referencia de Skills
 
-- Queries DQL: `.github/skills/dynatrace/README.md`
+- Queries DQL: `.github/skills/dyn-queries/README.md`
 - Umbrales y métricas: `.github/toolboxes/common-metrics.md`
 - Plantillas de reporte: `.github/toolboxes/report-templates.md`

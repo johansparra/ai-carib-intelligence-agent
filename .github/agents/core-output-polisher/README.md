@@ -19,22 +19,22 @@ Este agente actúa como **última capa antes de la entrega al usuario**.
 Invocar al final de cualquier respuesta de otro agente antes de entregarla:
 
 ```bash
-@output-polisher revisa y mejora este texto: {texto generado por otro agente}
+@core-output-polisher revisa y mejora este texto: {texto generado por otro agente}
 ```
 
 ### Modo bajo demanda
 
 ```bash
-@output-polisher mejora este reporte
-@output-polisher corrige este análisis
-@output-polisher pule este resumen
+@core-output-polisher mejora este reporte
+@core-output-polisher corrige este análisis
+@core-output-polisher pule este resumen
 ```
 
 ---
 
 ## Qué Hace
 
-1. **Detecta** los patrones artificiales listados en `skills/output-polisher/README.md`
+1. **Detecta** los patrones artificiales listados en `skills/core-output-polisher/README.md`
 2. **Corrige** frases de relleno, nominalizaciones, voz pasiva excesiva y corporatespeak
 3. **Mantiene** todo el contenido técnico intacto (métricas, queries, datos, tablas)
 4. **Devuelve** el texto corregido en el mismo formato (Markdown, tabla, lista)
@@ -67,11 +67,11 @@ Invocar al final de cualquier respuesta de otro agente antes de entregarla:
 
 ```mermaid
 graph LR
-    A["@dynatrace"] --> P["@output-polisher"]
-    B["@datapower"] --> P
-    C["@incident-responder"] --> P
-    D["@daily-summary"] --> P
-    E["@dql-assistant"] --> P
+    A["@dyn-analyst"] --> P["@core-output-polisher"]
+    B["@dp-analyst"] --> P
+    C["@ops-incident-responder"] --> P
+    D["@ops-daily-summary"] --> P
+    E["@dyn-dql-assistant"] --> P
     P --> U["Usuario"]
 ```
 
@@ -79,5 +79,5 @@ graph LR
 
 ## Referencia de Skills
 
-- **Reglas de corrección:** `.github/skills/output-polisher/README.md`
+- **Reglas de corrección:** `.github/skills/core-output-polisher/README.md`
 - **Terminología del proyecto:** `.github/toolboxes/common-metrics.md`

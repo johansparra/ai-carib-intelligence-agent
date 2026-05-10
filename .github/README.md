@@ -4,32 +4,32 @@ Esta carpeta contiene la estructura de agentes, skills, prompts y herramientas p
 
 ## Carpetas Principales
 
-- **`agents/`** - Agentes independientes por dominio
+- **`agents/`** - Agentes independientes por dominio y prefijo
 
-  - `dynatrace/` - Análisis DQL, métricas y anomalías con Davis AI
-  - `datapower/` - Análisis profesional de reportes de gateway
-  - `structure-monitor/` - Sincronización automática de documentación
-  - `incident-responder/` - Respuesta a incidentes críticos (correlación Dynatrace + DataPower)
-  - `daily-summary/` - Resumen diario automático de métricas
-  - `dql-assistant/` - Construcción y validación de queries DQL
-  - `output-polisher/` - Mejora léxica y gramatical de salidas
-  - `ai-team-dev.agent.md` - Equipo de desarrollo (Nova/Sage/Milo)
-  - `atlassian-requirements-to-jira.agent.md` - Transformación de requerimientos a Jira
+  - `dyn-analyst/` - Análisis DQL, métricas y anomalías con Davis AI
+  - `dyn-dql-assistant/` - Constructor y validador de queries DQL
+  - `dp-analyst/` - Análisis profesional de reportes de gateway
+  - `ops-incident-responder/` - Respuesta a incidentes (correlaciona dyn + dp)
+  - `ops-daily-summary/` - Resumen diario automático de métricas
+  - `core-structure-monitor/` - Sincronización automática de documentación
+  - `core-output-polisher/` - Mejora léxica y gramatical de salidas
+  - `core-ai-team-dev.agent.md` - Equipo de desarrollo (Nova/Sage/Milo)
+  - `core-atlassian-jira.agent.md` - Transformación de requerimientos a Jira
 
 - **`skills/`** - Conocimiento técnico reutilizable por los agentes
 
-  - `dynatrace/` - Configuración API, biblioteca de queries DQL, sintaxis
-  - `datapower/` - Estructura de reportes, patrones de análisis, códigos de error
-  - `structure-monitor/` - Lógica de detección y sincronización
-  - `incident-responder/` - Pasos de correlación y remediación por patrón
-  - `output-polisher/` - 7 categorías de patrones de mejora en español
-  - `gh-cli.md` - Referencia completa de GitHub CLI
+  - `dyn-queries/` - Configuración API, biblioteca de queries DQL, sintaxis
+  - `dp-analysis/` - Estructura de reportes, patrones de análisis, códigos de error
+  - `ops-incident/` - Pasos de correlación y remediación por patrón
+  - `core-structure-monitor/` - Lógica de detección y sincronización
+  - `core-output-polisher/` - 7 categorías de patrones de mejora en español
+  - `core-gh-cli.md` - Referencia completa de GitHub CLI
 
 - **`prompts/`** - Instrucciones de rol y comportamiento para cada agente
 
-  - `dynatrace-chatbot.prompt.md` - Rol, casos de uso y formato de respuesta
-  - `datapower-analyst.prompt.md` - Rol, severidad y escalamiento
-  - `structure-monitor.prompt.md` - Detección automática de cambios
+  - `dyn-chatbot.prompt.md` - Rol, casos de uso y formato de respuesta
+  - `dp-analyst.prompt.md` - Rol, severidad y escalamiento
+  - `core-structure-monitor.prompt.md` - Detección automática de cambios
 
 - **`customizations/`** - Configuración y convenciones del proyecto
 
@@ -43,15 +43,15 @@ Esta carpeta contiene la estructura de agentes, skills, prompts y herramientas p
 
 ## Flujo de Output con Output Polisher
 
-Todos los agentes pasan su salida por `@output-polisher` antes de entregarla al usuario:
+Todos los agentes pasan su salida por `@core-output-polisher` antes de entregarla al usuario:
 
 ```mermaid
 graph LR
-    A["@dynatrace"] --> OP["@output-polisher"]
-    B["@datapower"] --> OP
-    C["@incident-responder"] --> OP
-    D["@daily-summary"] --> OP
-    E["@dql-assistant"] --> OP
+    A["@dyn-analyst"] --> OP["@core-output-polisher"]
+    B["@dp-analyst"] --> OP
+    C["@ops-incident-responder"] --> OP
+    D["@ops-daily-summary"] --> OP
+    E["@dyn-dql-assistant"] --> OP
     OP --> U["Usuario"]
 
     style OP fill:#e377c2

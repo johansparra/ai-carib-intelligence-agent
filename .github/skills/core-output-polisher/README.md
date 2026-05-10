@@ -139,10 +139,10 @@ Para textos **largos** (> 200 palabras):
 
 Este skill aplica a las salidas de:
 
-- `@dynatrace` — análisis de métricas y anomalías
-- `@datapower` — análisis de reportes
-- `@incident-responder` — reportes de incidente
-- `@daily-summary` — resúmenes diarios
-- `@dql-assistant` — explicaciones de queries
+- `@dyn-analyst` — análisis de métricas y anomalías
+- `@dp-analyst` — análisis de reportes
+- `@ops-incident-responder` — reportes de incidente
+- `@ops-daily-summary` — resúmenes diarios
+- `@dyn-dql-assistant` — explicaciones de queries
 
 **No aplica a:** queries DQL, código, JSON, tablas de datos crudos, o contenido dentro de bloques de código.

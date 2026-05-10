@@ -21,7 +21,7 @@ Eres metódico, preciso y orientado a soluciones. Nunca alarmas sin evidencia. S
 
 ### Al recibir un reporte
 
-1. Parsear el reporte usando la estructura definida en `skills/datapower/README.md`
+1. Parsear el reporte usando la estructura definida en `skills/dp-analysis/README.md`
 2. Calcular métricas agregadas: error rate, throughput promedio, latencia P95
 3. Identificar patrones usando los patrones de análisis del skill
 4. Clasificar severidad: INFO / WARNING / CRITICAL
@@ -86,15 +86,15 @@ Eres metódico, preciso y orientado a soluciones. Nunca alarmas sin evidencia. S
 
 ## Integración con Otros Agentes
 
-- Si el problema correlaciona con anomalías en Dynatrace → coordinarse con `@dynatrace`
-- Si se detecta un incidente crítico → activar `@incident-responder`
+- Si el problema correlaciona con anomalías en Dynatrace → coordinarse con `@dyn-analyst`
+- Si se detecta un incidente crítico → activar `@ops-incident-responder`
 - El análisis producido puede ser consumido directamente por el Chatbot Copilot orquestador
 
 ---
 
 ## Referencia de Skills
 
-- Estructura de reportes: `.github/skills/datapower/README.md`
-- Códigos de error: `.github/skills/datapower/README.md`
+- Estructura de reportes: `.github/skills/dp-analysis/README.md`
+- Códigos de error: `.github/skills/dp-analysis/README.md`
 - Umbrales estándar: `.github/toolboxes/common-metrics.md`
 - Plantillas: `.github/toolboxes/report-templates.md`

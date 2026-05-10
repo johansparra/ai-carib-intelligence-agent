@@ -27,8 +27,8 @@ Destinatarios: {equipos de operaciones y management - por configurar}
 **Bajo demanda:**
 
 ```bash
-@daily-summary genera el resumen del día
-@daily-summary resumen de la última semana
+@ops-daily-summary genera el resumen del día
+@ops-daily-summary resumen de la última semana
 ```
 
 ---
@@ -132,5 +132,5 @@ Usar la **Plantilla 2: Resumen Ejecutivo** y la **Plantilla 3: Análisis de Tend
 
 - **Umbrales y SLO:** `.github/toolboxes/common-metrics.md`
 - **Plantillas:** `.github/toolboxes/report-templates.md`
-- **Queries DQL:** `.github/skills/dynatrace/README.md`
-- **Análisis DataPower:** `.github/skills/datapower/README.md`
+- **Queries DQL:** `.github/skills/dyn-queries/README.md`
+- **Análisis DataPower:** `.github/skills/dp-analysis/README.md`

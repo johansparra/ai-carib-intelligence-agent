@@ -19,10 +19,10 @@ Agente especializado exclusivamente en construir y validar queries DQL (Dynatrac
 
 | Situación | Agente a usar |
 | ----------- | --------------- |
-| "Analiza los errores de hoy" | `@dynatrace` (flujo completo) |
-| "Construye una query para X" | `@dql-assistant` (solo la query) |
-| "¿Es válida esta query?" | `@dql-assistant` (validación) |
-| "Optimiza esta query lenta" | `@dql-assistant` (optimización) |
+| "Analiza los errores de hoy" | `@dyn-analyst` (flujo completo) |
+| "Construye una query para X" | `@dyn-dql-assistant` (solo la query) |
+| "¿Es válida esta query?" | `@dyn-dql-assistant` (validación) |
+| "Optimiza esta query lenta" | `@dyn-dql-assistant` (optimización) |
 
 ---
 
@@ -85,7 +85,7 @@ fetch spans
 
 ## Referencia de Sintaxis DQL
 
-Ver documento completo en `.github/skills/dynatrace/README.md`.
+Ver documento completo en `.github/skills/dyn-queries/README.md`.
 
 ### Fuentes disponibles
 
@@ -123,5 +123,5 @@ Antes de entregar una query, verificar:
 
 ## Recursos
 
-- **Biblioteca de queries:** `.github/skills/dynatrace/README.md`
+- **Biblioteca de queries:** `.github/skills/dyn-queries/README.md`
 - **Documentación oficial DQL:** `https://docs.dynatrace.com/docs/platform/grail/dynatrace-query-language`

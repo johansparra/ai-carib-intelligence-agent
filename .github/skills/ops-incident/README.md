@@ -131,6 +131,6 @@ Completar la **Plantilla 1: Reporte de Incidente** de `.github/toolboxes/report-
 
 ## Integración con Otros Agentes
 
-- Datos de entrada vienen de `@dynatrace` y `@datapower`
+- Datos de entrada vienen de `@dyn-analyst` y `@dp-analyst`
 - El reporte generado puede enviarse al chatbot orquestador para distribución
 - Si el incidente requiere cambios en Jira: pasar al agente `@atlassian-requirements-to-jira`

@@ -65,7 +65,7 @@ Crea README.md en la nueva carpeta
 ### Cuando modificas un agente
 
 ```text
-Cambio en: .github/agents/dynatrace/README.md
+Cambio en: .github/agents/dyn-analyst/README.md
 ↓
 Structure Monitor detecta esto
 ↓

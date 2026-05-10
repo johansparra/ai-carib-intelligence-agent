@@ -4,13 +4,36 @@ Convenciones de nombres y estructura para todos los archivos del proyecto.
 
 ---
 
+## Sistema de Prefijos
+
+Todos los agentes, skills y prompts llevan un prefijo que indica su dominio:
+
+| Prefijo | Dominio | Cuándo usarlo |
+| -------- | ------- | ------------- |
+| `dyn-` | Dynatrace | Específico de Dynatrace, DQL o Davis AI |
+| `dp-` | DataPower | Específico de DataPower o gateway |
+| `ops-` | Operaciones | Usa ambos dominios (incidentes, resúmenes) |
+| `core-` | Infraestructura | Transversal al proyecto, sin dominio específico |
+
+**Ejemplos correctos:**
+
+```text
+dyn-analyst/          dyn-queries/          dyn-chatbot.prompt.md
+dp-analyst/           dp-analysis/          dp-analyst.prompt.md
+ops-incident-responder/  ops-incident/
+core-structure-monitor/  core-output-polisher/  core-gh-cli.md
+core-ai-team-dev.agent.md
+```
+
+---
+
 ## Nombres de Archivos
 
 | Tipo de archivo | Convención | Ejemplo |
 | ---------------- | ------------ | --------- |
-| Agente Copilot | `{nombre}.agent.md` | `ai-team-dev.agent.md` |
-| Prompt Copilot | `{nombre}.prompt.md` | `dynatrace-chatbot.prompt.md` |
-| Skill / documentación | `README.md` dentro de su carpeta | `skills/dynatrace/README.md` |
+| Agente Copilot | `{prefijo}-{nombre}.agent.md` | `core-ai-team-dev.agent.md` |
+| Prompt Copilot | `{prefijo}-{nombre}.prompt.md` | `dyn-chatbot.prompt.md` |
+| Skill / documentación | `README.md` dentro de carpeta prefijada | `skills/dyn-queries/README.md` |
 | Toolbox | `{nombre-descriptivo}.md` | `report-templates.md` |
 | Customización | `{nombre-descriptivo}.md` | `naming-conventions.md` |
 

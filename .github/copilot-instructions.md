@@ -44,34 +44,40 @@ Cuando el usuario menciona "gateway", "reporte", "transacciones", "domain", "pol
 
 ## Estructura de Carpetas
 
-```
+```text
 ai-carib-intelligence-agent/
-├── README.md (documentación principal con diagramas)
+├── README.md
+├── CLAUDE.md
+├── Comandos.md
 └── .github/
     ├── copilot-instructions.md (este archivo)
     ├── agents/
-    │   ├── dynatrace/           ← Agente para Dynatrace/Davis
-    │   ├── datapower/           ← Agente para análisis de DataPower
-    │   ├── structure-monitor/   ← Agente que sincroniza documentación
-    │   ├── incident-responder/  ← Agente de respuesta a incidentes
-    │   ├── daily-summary/       ← Agente de resumen diario
-    │   └── dql-assistant/       ← Asistente especializado en queries DQL
+    │   ├── dyn-analyst/             ← Análisis DQL, métricas y anomalías
+    │   ├── dyn-dql-assistant/       ← Constructor y validador de queries DQL
+    │   ├── dp-analyst/              ← Análisis de reportes DataPower
+    │   ├── ops-incident-responder/  ← Respuesta a incidentes (dyn + dp)
+    │   ├── ops-daily-summary/       ← Resumen diario de métricas
+    │   ├── core-structure-monitor/  ← Sincronización automática de docs
+    │   ├── core-output-polisher/    ← Mejora léxica y gramatical
+    │   ├── core-ai-team-dev.agent.md
+    │   └── core-atlassian-jira.agent.md
     ├── skills/
-    │   ├── dynatrace/           ← Skills de consultas DQL y anomalías
-    │   ├── datapower/           ← Skills de análisis profesional
-    │   ├── structure-monitor/   ← Skills de detección y sincronización
-    │   ├── incident-responder/  ← Skills de correlación y reporte
-    │   └── gh-cli.md            ← Referencia completa de GitHub CLI
+    │   ├── dyn-queries/             ← Biblioteca DQL, API config, patrones
+    │   ├── dp-analysis/             ← Patrones de análisis, códigos de error
+    │   ├── ops-incident/            ← Correlación y pasos de remediación
+    │   ├── core-structure-monitor/  ← Lógica de detección y sincronización
+    │   ├── core-output-polisher/    ← Reglas de estilo y patrones de mejora
+    │   └── core-gh-cli.md           ← Referencia completa GitHub CLI
     ├── prompts/
-    │   ├── dynatrace-chatbot.prompt.md
-    │   ├── datapower-analyst.prompt.md
-    │   └── structure-monitor.prompt.md
+    │   ├── dyn-chatbot.prompt.md
+    │   ├── dp-analyst.prompt.md
+    │   └── core-structure-monitor.prompt.md
     ├── customizations/
-    │   ├── auto-sync.md         ← Configuración de auto-sincronización
-    │   └── naming-conventions.md← Convenciones de nombres y estructura
+    │   ├── auto-sync.md             ← Config de auto-sincronización
+    │   └── naming-conventions.md   ← Convenciones y reglas de formato
     └── toolboxes/
-        ├── report-templates.md  ← Plantillas de reportes compartidas
-        └── common-metrics.md    ← SLO/SLA, umbrales y glosario
+        ├── report-templates.md      ← Plantillas de reportes compartidas
+        └── common-metrics.md        ← SLO/SLA, umbrales y glosario
 ```
 
 ---
@@ -182,8 +188,8 @@ Copilot: "¿Qué cambios se han hecho en la estructura?"
 ## Próximos Pasos
 
 - [ ] Implementar conexión con Davis IA de Dynatrace
-- [ ] Crear scripts de DQL queries en `skills/dynatrace/`
-- [ ] Desarrollar lógica de análisis en `skills/datapower/`
+- [ ] Crear scripts de DQL queries en `skills/dyn-queries/`
+- [ ] Desarrollar lógica de análisis en `skills/dp-analysis/`
 - [ ] Implementar orquestación en Chatbot principal
 - [ ] Crear tests para cada componente
 

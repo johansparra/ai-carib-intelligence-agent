@@ -204,4 +204,4 @@ Cuando se conecte la API real:
 1. Reemplazar variables de configuración arriba
 2. Validar acceso con: `GET {BASE_URL}/ServicesStatus`
 3. Configurar polling de métricas cada 60 segundos
-4. Integrar con `@incident-responder` para correlación automática con Dynatrace
+4. Integrar con `@ops-incident-responder` para correlación automática con Dynatrace

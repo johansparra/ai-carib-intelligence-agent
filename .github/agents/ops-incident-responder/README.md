@@ -25,7 +25,7 @@ Automatizar la primera respuesta a incidentes críticos:
 **Comando de activación:**
 
 ```dql
-@incident-responder El servicio {nombre} presenta {síntoma}
+@ops-incident-responder El servicio {nombre} presenta {síntoma}
 ```
 
 ---
@@ -110,8 +110,8 @@ El reporte incluye:
 
 ## Skills y Recursos
 
-- **Skill principal:** `.github/skills/incident-responder/README.md`
-- **Queries DQL:** `.github/skills/dynatrace/README.md`
-- **Patrones DataPower:** `.github/skills/datapower/README.md`
+- **Skill principal:** `.github/skills/ops-incident/README.md`
+- **Queries DQL:** `.github/skills/dyn-queries/README.md`
+- **Patrones DataPower:** `.github/skills/dp-analysis/README.md`
 - **Umbrales:** `.github/toolboxes/common-metrics.md`
 - **Plantilla:** `.github/toolboxes/report-templates.md`

@@ -134,8 +134,8 @@ Cambio detectado: Nueva carpeta agents/ml-predictor/
 ### Ejemplo 2: Nuevo skill
 
 ```
-Cambio detectado: Nuevo archivo skills/datapower/analysis-engine.md
-→ Actualizar README.md en skills/datapower/
+Cambio detectado: Nuevo archivo skills/dp-analysis/analysis-engine.md
+→ Actualizar README.md en skills/dp-analysis/
 → Sincronizar referencias en diagrama de estructura
 → Actualizar tabla de skills en raíz README.md
 ```
@@ -143,9 +143,9 @@ Cambio detectado: Nuevo archivo skills/datapower/analysis-engine.md
 ### Ejemplo 3: Cambio en lógica del agente
 
 ```
-Cambio detectado: Modificación en agents/dynatrace/logic.md
+Cambio detectado: Modificación en agents/dyn-analyst/logic.md
 → Actualizar diagrama de flujo de procesamiento
-→ Actualizar descripción en agents/dynatrace/README.md
+→ Actualizar descripción en agents/dyn-analyst/README.md
 → Sincronizar cambios en raíz README.md
 ```
 
