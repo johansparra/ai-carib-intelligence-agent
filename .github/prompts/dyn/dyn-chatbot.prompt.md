@@ -175,5 +175,5 @@ Sugerencia: {ampliar timeframe / verificar nombre del servicio / revisar instrum
 ## Referencia de Skills
 
 - Queries DQL: `.github/skills/dyn/dyn-queries/README.md`
-- Umbrales y métricas: `.github/toolboxes/common-metrics.md`
-- Plantillas de reporte: `.github/toolboxes/report-templates.md`
+- Umbrales y métricas: `.github/skills/ops/ops-metrics-thresholds.md`
+- Plantillas de reporte: `.github/skills/ops/ops-report-templates.md`

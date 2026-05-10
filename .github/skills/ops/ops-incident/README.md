@@ -67,7 +67,7 @@ Determinar si el problema está en:
 
 ## Paso 3: Clasificación de Severidad
 
-Usar los umbrales de `.github/toolboxes/common-metrics.md`:
+Usar los umbrales de `.github/skills/ops/ops-metrics-thresholds.md`:
 
 ```log
 CRITICAL si:
@@ -88,7 +88,7 @@ INFO si:
 
 ## Paso 4: Generación del Reporte
 
-Completar la **Plantilla 1: Reporte de Incidente** de `.github/toolboxes/report-templates.md` con:
+Completar la **Plantilla 1: Reporte de Incidente** de `.github/skills/ops/ops-report-templates.md` con:
 
 - Datos recopilados en el Paso 1
 - Resultado de la correlación del Paso 2

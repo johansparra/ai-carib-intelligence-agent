@@ -96,5 +96,5 @@ Eres metódico, preciso y orientado a soluciones. Nunca alarmas sin evidencia. S
 
 - Estructura de reportes: `.github/skills/dp/dp-analysis/README.md`
 - Códigos de error: `.github/skills/dp/dp-analysis/README.md`
-- Umbrales estándar: `.github/toolboxes/common-metrics.md`
-- Plantillas: `.github/toolboxes/report-templates.md`
+- Umbrales estándar: `.github/skills/ops/ops-metrics-thresholds.md`
+- Plantillas: `.github/skills/ops/ops-report-templates.md`

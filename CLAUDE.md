@@ -12,7 +12,7 @@ The repo defines three operational agents orchestrated through GitHub Copilot:
 
 - **Dynatrace Agent** (`.github/agents/dyn/dyn-analyst/`) — Connects to Dynatrace Davis AI, runs DQL queries, detects anomalies. Uses skills in `.github/skills/dyn/dyn-queries/`.
 - **DataPower Agent** (`.github/agents/dp/dp-analyst/`) — Analyzes DataPower reports and generates professional insights. Uses skills in `.github/skills/dp/dp-analysis/`. Operates independently with no dependencies on Dynatrace.
-- **Structure Monitor** (`.github/agents/core/core-structure-monitor/`) — Automatically detects structural changes in the project and keeps all README.md files and Mermaid diagrams in sync. Configured via `.github/customizations/auto-sync.md`. Also manages automatic Git commits and pushes.
+- **Structure Monitor** (`.github/agents/core/core-structure-monitor/`) — Automatically detects structural changes in the project and keeps all README.md files and Mermaid diagrams in sync. Configured via `.github/skills/core/core-auto-sync.md`. Also manages automatic Git commits and pushes.
 
 Two additional agents are present:
 - **ai-team-dev** (`.github/agents/core/core-ai-team-dev.agent.md`) — A three-role dev team (Nova/Frontend, Sage/Backend, Milo/Visual) for feature implementation. Reads `PROJECT_BRIEF.md` before starting and writes progress to `docs/sprint-N/progress.md`.
@@ -23,7 +23,7 @@ The Chatbot Copilot acts as the central orchestrator: receives user requests, ac
 ## Key Rules (from copilot-instructions.md)
 
 ### Component Separation
-Dynatrace and DataPower must remain fully independent. Changes to one must not affect the other. Shared logic belongs in `.github/toolboxes/`.
+Dynatrace and DataPower must remain fully independent. Changes to one must not affect the other. Shared logic belongs in `.github/skills/ops/`.
 
 ### Documentation via Structure Monitor
 **Do not manually edit Mermaid diagrams in any README.md.** The Structure Monitor agent handles all diagram regeneration automatically when files or folders change. To trigger it manually, say: *"Sincroniza la documentación con los cambios actuales"* or run `/structure-monitor-sync` in Copilot.
@@ -44,10 +44,23 @@ Each type of change should be a separate commit:
 - Blank line required after `##` and `###` headings
 - Lists following a `:` must be surrounded by blank lines (avoids MD032)
 
+## Official Copilot Folders
+
+| Folder | Purpose |
+| ------ | ------- |
+| `.github/agents/` | Agent definitions (folder with README.md or `.agent.md` file) |
+| `.github/skills/` | Technical reference knowledge used by agents |
+| `.github/prompts/` | Role and behavior prompts per agent |
+| `.github/instructions/` | Auto-injected rules based on file pattern (`applyTo`) |
+| `.github/copilot-instructions.md` | Global project context always in Copilot context |
+
+`instructions/` files use `applyTo: "**"` (all files) or `applyTo: "**/*.md"` (markdown only). They activate automatically — no user action required.
+
 ## Adding New Components
 
 When adding a new agent, skill, or prompt:
-1. Create the folder/file in the appropriate `.github/` subdirectory
+
+1. Create the folder/file in the appropriate `.github/` subdirectory under the correct domain group (`dyn/`, `dp/`, `ops/`, `core/`)
 2. Create a `README.md` for the new component
 3. The Structure Monitor will detect the change and update all parent README.md files and Mermaid diagrams automatically
 4. Commit structure and logic changes as separate atomic commits

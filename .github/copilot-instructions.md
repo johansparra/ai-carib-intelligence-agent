@@ -71,11 +71,15 @@ ai-carib-intelligence-agent/
     │   ├── dp/
     │   │   └── dp-analysis/             ← Patrones de análisis, códigos de error
     │   ├── ops/
-    │   │   └── ops-incident/            ← Correlación y pasos de remediación
+    │   │   ├── ops-incident/            ← Correlación y pasos de remediación
+    │   │   ├── ops-report-templates.md  ← Plantillas de reportes compartidas
+    │   │   └── ops-metrics-thresholds.md ← SLO/SLA, umbrales y glosario
     │   └── core/
     │       ├── core-structure-monitor/  ← Lógica de detección y sincronización
     │       ├── core-output-polisher/    ← Reglas de estilo y patrones de mejora
-    │       └── core-gh-cli.md           ← Referencia completa GitHub CLI
+    │       ├── core-gh-cli.md           ← Referencia completa GitHub CLI
+    │       ├── core-auto-sync.md        ← Config de auto-sincronización
+    │       └── core-naming-conventions.md ← Convenciones y reglas de formato
     ├── prompts/
     │   ├── dyn/
     │   │   └── dyn-chatbot.prompt.md
@@ -83,12 +87,9 @@ ai-carib-intelligence-agent/
     │   │   └── dp-analyst.prompt.md
     │   └── core/
     │       └── core-structure-monitor.prompt.md
-    ├── customizations/
-    │   ├── auto-sync.md             ← Config de auto-sincronización
-    │   └── naming-conventions.md   ← Convenciones y reglas de formato
-    └── toolboxes/
-        ├── report-templates.md      ← Plantillas de reportes compartidas
-        └── common-metrics.md        ← SLO/SLA, umbrales y glosario
+    └── instructions/
+        ├── core-naming-conventions.instructions.md ← Prefijos y commits (auto)
+        └── core-markdown-style.instructions.md     ← Formato Markdown (auto)
 ```
 
 ---

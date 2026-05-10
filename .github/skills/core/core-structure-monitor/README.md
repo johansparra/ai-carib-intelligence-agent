@@ -97,7 +97,7 @@ El skill funciona en conjunto con:
 
 - **Prompt**: `.github/prompts/core/core-structure-monitor.prompt.md`
 - **Agent**: `.github/agents/core/core-structure-monitor/`
-- **Config**: `.github/customizations/auto-sync.md`
+- **Config**: `.github/skills/core/core-auto-sync.md`
 
 ## ⚡ Rendimiento
 
