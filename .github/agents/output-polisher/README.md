@@ -18,13 +18,13 @@ Este agente actúa como **última capa antes de la entrega al usuario**.
 
 Invocar al final de cualquier respuesta de otro agente antes de entregarla:
 
-```
+```bash
 @output-polisher revisa y mejora este texto: {texto generado por otro agente}
 ```
 
 ### Modo bajo demanda
 
-```
+```bash
 @output-polisher mejora este reporte
 @output-polisher corrige este análisis
 @output-polisher pule este resumen

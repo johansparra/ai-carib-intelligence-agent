@@ -24,7 +24,7 @@ Automatizar la primera respuesta a incidentes críticos:
 
 **Comando de activación:**
 
-```
+```dql
 @incident-responder El servicio {nombre} presenta {síntoma}
 ```
 
@@ -33,7 +33,7 @@ Automatizar la primera respuesta a incidentes críticos:
 ## Input Requerido
 
 | Campo | Descripción | Ejemplo |
-|-------|-------------|---------|
+| ------- | ------------- | --------- |
 | `servicio` | Nombre del servicio afectado | `payment-service` |
 | `síntoma` | Descripción del problema observado | `alta latencia y errores 500` |
 | `timeframe` | Ventana de tiempo a analizar | `última hora` (opcional, default: 1h) |
@@ -62,24 +62,24 @@ graph TD
 
 1. Verificar anomalías activas en Davis AI:
 
-```dql
-fetch problems
-| filter status == "OPEN"
-| filter affectedEntities contains "{servicio}"
-| fields title, severity, startTime, impactLevel
-```
+    ```dql
+    fetch problems
+    | filter status == "OPEN"
+    | filter affectedEntities contains "{servicio}"
+    | fields title, severity, startTime, impactLevel
+    ```
 
 2. Obtener métricas del servicio en el timeframe:
 
-```dql
-fetch spans
-| filter service.name == "{servicio}"
-| filter timestamp > now() - 1h
-| summarize
-    error_rate = countIf(http.status_code >= 500) / count() * 100,
-    p95 = percentile(duration, 95),
-    total = count()
-```
+    ```dql
+    fetch spans
+    | filter service.name == "{servicio}"
+    | filter timestamp > now() - 1h
+    | summarize
+        error_rate = countIf(http.status_code >= 500) / count() * 100,
+        p95 = percentile(duration, 95),
+        total = count()
+    ```
 
 3. Verificar servicios dependientes afectados:
 

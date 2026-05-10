@@ -18,7 +18,7 @@ Agente que genera resúmenes automáticos diarios del estado de los sistemas, co
 
 <!-- TODO: configurar horario y canal de distribución -->
 
-```
+```text
 Horario sugerido: 08:00 hora local
 Canal de distribución: {Slack/Teams/email - por configurar}
 Destinatarios: {equipos de operaciones y management - por configurar}
@@ -26,7 +26,7 @@ Destinatarios: {equipos de operaciones y management - por configurar}
 
 **Bajo demanda:**
 
-```
+```bash
 @daily-summary genera el resumen del día
 @daily-summary resumen de la última semana
 ```

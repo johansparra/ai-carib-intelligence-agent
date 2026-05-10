@@ -9,7 +9,7 @@ Definiciones de métricas, SLO/SLA y glosario compartidos por todos los agentes 
 <!-- TODO: ajustar con los valores reales acordados con el negocio -->
 
 | Métrica | SLO (objetivo interno) | SLA (compromiso con cliente) |
-|--------|------------------------|------------------------------|
+| -------- | ------------------------ | ------------------------------ |
 | Disponibilidad | 99.95% mensual | 99.9% mensual |
 | Latencia P95 | < 500ms | < 1000ms |
 | Latencia P99 | < 1000ms | < 2000ms |
@@ -23,7 +23,7 @@ Definiciones de métricas, SLO/SLA y glosario compartidos por todos los agentes 
 ### Latencia (response time)
 
 | Nivel | Umbral | Acción |
-|-------|--------|--------|
+| ------- | -------- | -------- |
 | OK | < 500ms | Ninguna |
 | WARNING | 500ms – 2000ms | Monitorear, investigar si persiste |
 | CRITICAL | > 2000ms | Escalar inmediatamente |
@@ -31,7 +31,7 @@ Definiciones de métricas, SLO/SLA y glosario compartidos por todos los agentes 
 ### Tasa de error (error rate)
 
 | Nivel | Umbral | Acción |
-|-------|--------|--------|
+| ------- | -------- | -------- |
 | OK | < 1% | Ninguna |
 | WARNING | 1% – 5% | Investigar causa |
 | CRITICAL | > 5% | Escalar inmediatamente |
@@ -39,7 +39,7 @@ Definiciones de métricas, SLO/SLA y glosario compartidos por todos los agentes 
 ### CPU (hosts y gateways)
 
 | Nivel | Umbral | Acción |
-|-------|--------|--------|
+| ------- | -------- | -------- |
 | OK | < 70% | Ninguna |
 | WARNING | 70% – 85% | Revisar procesos, planificar capacidad |
 | CRITICAL | > 85% | Escalar, evaluar escalamiento horizontal |
@@ -47,7 +47,7 @@ Definiciones de métricas, SLO/SLA y glosario compartidos por todos los agentes 
 ### Memoria
 
 | Nivel | Umbral | Acción |
-|-------|--------|--------|
+| ------- | -------- | -------- |
 | OK | < 75% | Ninguna |
 | WARNING | 75% – 90% | Investigar fugas de memoria |
 | CRITICAL | > 90% | Escalar, reinicio planificado si necesario |
@@ -55,7 +55,7 @@ Definiciones de métricas, SLO/SLA y glosario compartidos por todos los agentes 
 ### Throughput (caída respecto a baseline)
 
 | Nivel | Caída | Acción |
-|-------|-------|--------|
+| ------- | -------- | -------- |
 | OK | < 10% | Ninguna |
 | WARNING | 10% – 30% | Verificar si es degradación o reducción de demanda |
 | CRITICAL | > 30% | Escalar, verificar disponibilidad del servicio |
@@ -63,7 +63,7 @@ Definiciones de métricas, SLO/SLA y glosario compartidos por todos los agentes 
 ### Queue depth (DataPower)
 
 | Nivel | Umbral | Acción |
-|-------|--------|--------|
+| ------- | -------- | -------- |
 | OK | < 50 mensajes | Ninguna |
 | WARNING | 50 – 200 mensajes | Monitorear, revisar backend |
 | CRITICAL | > 200 mensajes | Escalar, riesgo de pérdida de mensajes |
@@ -75,7 +75,7 @@ Definiciones de métricas, SLO/SLA y glosario compartidos por todos los agentes 
 ### Términos de Dynatrace
 
 | Término | Definición |
-|---------|-----------|
+| ------- | -------- |
 | **DQL** | Dynatrace Query Language — lenguaje para consultar métricas, logs y trazas |
 | **Davis AI** | Motor de IA de Dynatrace que detecta anomalías automáticamente |
 | **Span** | Unidad de trabajo en una traza distribuida (equivale a una operación en un servicio) |
@@ -89,7 +89,7 @@ Definiciones de métricas, SLO/SLA y glosario compartidos por todos los agentes 
 ### Términos de DataPower
 
 | Término | Definición |
-|---------|-----------|
+| ------- | -------- |
 | **Gateway** | Servidor IBM DataPower que procesa y enruta mensajes entre sistemas |
 | **Domain** | Partición lógica dentro de DataPower que agrupa servicios relacionados |
 | **Service** | Punto de entrada en DataPower que expone una funcionalidad específica |
@@ -103,7 +103,7 @@ Definiciones de métricas, SLO/SLA y glosario compartidos por todos los agentes 
 ### Términos generales
 
 | Término | Definición |
-|---------|-----------|
+| ------- | -------- |
 | **MTTR** | Mean Time To Recovery — tiempo promedio para restaurar un servicio |
 | **MTBF** | Mean Time Between Failures — tiempo promedio entre fallas |
 | **P95 / P99** | Percentil 95/99 — el 95% o 99% de las requests son más rápidas que este valor |
@@ -117,7 +117,7 @@ Definiciones de métricas, SLO/SLA y glosario compartidos por todos los agentes 
 ## Códigos de Error DataPower — Referencia Rápida
 
 | Código | Categoría | Descripción |
-|--------|-----------|-------------|
+| ------- | -------- | -------- |
 | `0x00d30001` | Conectividad | Connection refused |
 | `0x00d30003` | Conectividad | Backend connection timeout |
 | `0x00d30006` | SSL/TLS | SSL handshake failure |
@@ -132,7 +132,7 @@ Definiciones de métricas, SLO/SLA y glosario compartidos por todos los agentes 
 ## Frecuencias de Monitoreo Recomendadas
 
 | Tipo de métrica | Frecuencia | Herramienta |
-|----------------|------------|-------------|
+| ------- | -------- | -------- |
 | Disponibilidad de servicios | Cada 60 segundos | Dynatrace Synthetic |
 | CPU / Memoria de hosts | Cada 60 segundos | Dynatrace |
 | Error rate y latencia | Tiempo real (streaming) | Dynatrace Davis AI |

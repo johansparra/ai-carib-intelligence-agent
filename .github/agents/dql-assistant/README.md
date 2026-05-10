@@ -18,7 +18,7 @@ Agente especializado exclusivamente en construir y validar queries DQL (Dynatrac
 ## Cuándo Usar Este Agente vs el Agente Dynatrace
 
 | Situación | Agente a usar |
-|-----------|---------------|
+| ----------- | --------------- |
 | "Analiza los errores de hoy" | `@dynatrace` (flujo completo) |
 | "Construye una query para X" | `@dql-assistant` (solo la query) |
 | "¿Es válida esta query?" | `@dql-assistant` (validación) |
@@ -89,7 +89,7 @@ Ver documento completo en `.github/skills/dynatrace/README.md`.
 
 ### Fuentes disponibles
 
-```
+```dql
 fetch spans      -- trazas distribuidas (transacciones HTTP, RPC)
 fetch logs       -- logs de aplicación e infraestructura
 fetch metrics    -- métricas de host, servicio, proceso

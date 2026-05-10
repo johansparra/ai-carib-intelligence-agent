@@ -57,7 +57,7 @@ Revisar el reporte DataPower del período afectado buscando:
 Determinar si el problema está en:
 
 | Escenario | Señales | Causa probable |
-|-----------|---------|----------------|
+| ----------- | --------- | ---------------- |
 | **Solo Dynatrace** | Anomalía en spans, DataPower OK | Problema en la aplicación o backend |
 | **Solo DataPower** | Errores en gateway, Dynatrace sin anomalía | Problema de conectividad o política |
 | **Ambos sistemas** | Anomalías simultáneas en el mismo servicio | Problema de infraestructura compartida |
@@ -69,7 +69,7 @@ Determinar si el problema está en:
 
 Usar los umbrales de `.github/toolboxes/common-metrics.md`:
 
-```
+```log
 CRITICAL si:
   - Error rate > 5% O
   - Latencia P95 > 2000ms O

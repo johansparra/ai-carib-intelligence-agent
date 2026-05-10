@@ -8,7 +8,7 @@ Skills que definen el análisis profesional de reportes DataPower. Este componen
 
 <!-- TODO: reemplazar con valores reales al momento de integración -->
 
-```
+```http
 DP_HOST=datapower.empresa.com    # Host del DataPower Gateway
 DP_PORT=5554                     # Puerto REST Management Interface
 DP_DOMAIN=default                # Dominio de DataPower a monitorear
@@ -19,7 +19,7 @@ BASE_URL=https://{DP_HOST}:{DP_PORT}/mgmt/status/{DP_DOMAIN}
 
 **Endpoints REST Management Interface:**
 
-```
+```http
 GET {BASE_URL}/HTTPTransactions     -- transacciones HTTP
 GET {BASE_URL}/LogTargetSummary     -- estado de logs
 GET {BASE_URL}/ServicesStatus       -- estado de servicios
@@ -33,7 +33,7 @@ GET {BASE_URL}/MessageFlows         -- flujos de mensajes activos
 
 Un reporte típico contiene los siguientes campos:
 
-```
+```http
 timestamp       : 2025-05-09T14:32:00Z
 service         : PaymentGatewayService
 domain          : production
@@ -55,7 +55,7 @@ method          : POST
 ## Métricas Clave a Analizar
 
 | Métrica | Descripción | Umbral WARNING | Umbral CRITICAL |
-|--------|-------------|----------------|-----------------|
+| -------- | ------------- | ---------------- | ----------------- |
 | `response_time` | Tiempo de respuesta end-to-end | > 800ms | > 2000ms |
 | `error_rate` | % de transacciones con error | > 1% | > 5% |
 | `throughput` | Transacciones por segundo (TPS) | Caída > 20% | Caída > 50% |
@@ -68,7 +68,7 @@ method          : POST
 ## Códigos de Error Comunes
 
 | Código | Descripción | Causa probable |
-|--------|-------------|---------------|
+| -------- | ------------- | --------------- |
 | `0x00d30003` | Backend connection timeout | Backend caído o lento |
 | `0x00d30006` | SSL handshake failure | Certificado expirado o no válido |
 | `0x00d3000b` | Service unavailable | Servicio de backend no disponible |
@@ -159,7 +159,7 @@ Para cada análisis, el agente DataPower produce esta estructura:
 
 **Reporte de entrada:**
 
-```
+```log
 [2025-05-09 14:30] PaymentGatewayService | error | 0x00d30003 | 3420ms
 [2025-05-09 14:31] PaymentGatewayService | error | 0x00d30003 | 3891ms
 [2025-05-09 14:32] AuthService           | ok    | -          | 145ms

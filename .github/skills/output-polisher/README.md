@@ -17,7 +17,7 @@ Los agentes (Dynatrace, DataPower, Incident Responder, Daily Summary) generan te
 ### 1. Frases de relleno de IA — eliminar
 
 | Detectar | Reemplazar con |
-|----------|----------------|
+| ---------- | ---------------- |
 | `cabe destacar que` | *(eliminar, ir directo al punto)* |
 | `es importante señalar que` | *(eliminar)* |
 | `en este sentido` | *(eliminar)* |
@@ -34,7 +34,7 @@ Los agentes (Dynatrace, DataPower, Incident Responder, Daily Summary) generan te
 ### 2. Nominalizaciones innecesarias — descomponer
 
 | Detectar | Reemplazar con |
-|----------|----------------|
+| ---------- | ---------------- |
 | `la realización de` | `realizar` |
 | `el análisis de` | `analizar` |
 | `la implementación de` | `implementar` |
@@ -45,7 +45,7 @@ Los agentes (Dynatrace, DataPower, Incident Responder, Daily Summary) generan te
 ### 3. Voz pasiva excesiva — activar
 
 | Detectar | Reemplazar con |
-|----------|----------------|
+| ---------- | ---------------- |
 | `se puede observar que` | *(eliminar, afirmar directamente)* |
 | `se realizó el análisis` | `el análisis muestra` |
 | `fue detectado un error` | `se detectó un error` / `hay un error` |
@@ -54,7 +54,7 @@ Los agentes (Dynatrace, DataPower, Incident Responder, Daily Summary) generan te
 ### 4. Corporatespeak inflado — desinflar
 
 | Detectar | Reemplazar con |
-|----------|----------------|
+| ---------- | ---------------- |
 | `robusto` (sin justificación) | *(eliminar o especificar qué lo hace robusto)* |
 | `solución integral` | *(describir qué resuelve exactamente)* |
 | `de primer nivel` | *(eliminar)* |
@@ -66,7 +66,7 @@ Los agentes (Dynatrace, DataPower, Incident Responder, Daily Summary) generan te
 ### 5. Aperturas formulaicas — reemplazar
 
 | Detectar | Reemplazar con |
-|----------|----------------|
+| ---------- | ---------------- |
 | `En primer lugar, ...` | *(ir directo al primer punto)* |
 | `Por otro lado, ...` | *(usar el conector apropiado al contenido)* |
 | `En conclusión, ...` | `En resumen:` / *(ir directo)* |
@@ -77,7 +77,7 @@ Los agentes (Dynatrace, DataPower, Incident Responder, Daily Summary) generan te
 ### 6. Redundancias — condensar
 
 | Detectar | Reemplazar con |
-|----------|----------------|
+| ---------- | ---------------- |
 | `actualmente en este momento` | `actualmente` |
 | `período de tiempo` | `período` |
 | `resultado final` | `resultado` |
@@ -88,7 +88,7 @@ Los agentes (Dynatrace, DataPower, Incident Responder, Daily Summary) generan te
 ### 7. Hedging excesivo — afirmar con confianza
 
 | Detectar | Reemplazar con |
-|----------|----------------|
+| ---------- | ---------------- |
 | `podría potencialmente` | `puede` |
 | `en cierta medida` | *(especificar o eliminar)* |
 | `sería posible que` | `puede que` / afirmar directamente si hay certeza |
