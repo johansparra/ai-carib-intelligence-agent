@@ -2,13 +2,43 @@
 
 ## Propósito del Proyecto
 
-Este repositorio es la **plataforma de inteligencia para análisis de Dynatrace y DataPower**. 
+Este repositorio es la **plataforma de inteligencia para análisis de Dynatrace y DataPower**.
 
 Proporciona:
+
 - **Agente Dynatrace** - Conexión con Davis IA de Dynatrace, ejecución de DQL, detección de anomalías
 - **Agente DataPower** - Análisis profesional de reportes de DataPower
 - **Chatbot Copilot** - Orquestador central que coordina ambos agentes
 - **Structure Monitor** - Agente automático que mantiene la documentación sincronizada
+- **Incident Responder** - Correlaciona anomalías de Dynatrace y DataPower y genera reportes de incidente
+- **Daily Summary** - Genera resúmenes automáticos diarios del estado de los sistemas
+- **DQL Assistant** - Especializado en construir y validar queries DQL
+
+---
+
+## Contexto de Dominio
+
+### Dynatrace
+
+**Dynatrace** es una plataforma de observabilidad y monitoreo APM (Application Performance Monitoring). En este proyecto se usa para:
+
+- Monitorear el rendimiento de servicios, hosts y procesos en producción
+- Detectar anomalías automáticamente mediante **Davis AI** (motor de IA de Dynatrace)
+- Ejecutar **queries DQL** (Dynatrace Query Language) para extraer métricas, logs y trazas
+- Gestionar **SLO/SLA** de los servicios de la plataforma
+
+Cuando el usuario menciona "métricas", "latencia", "errores", "trazas", "spans" o "anomalías", generalmente se refiere a datos de Dynatrace.
+
+### DataPower
+
+**IBM DataPower Gateway** es un appliance de integración empresarial que actúa como gateway de seguridad, transformación y enrutamiento de mensajes entre sistemas. En este proyecto se usa para:
+
+- Procesar transacciones entre sistemas internos y externos
+- Aplicar políticas de seguridad (autenticación, autorización, cifrado)
+- Transformar formatos de mensajes (XML/SOAP/JSON/REST)
+- Generar reportes de transacciones con métricas de rendimiento del gateway
+
+Cuando el usuario menciona "gateway", "reporte", "transacciones", "domain", "policy" o códigos de error `0x00dXXXXX`, se refiere a DataPower.
 
 ---
 
@@ -20,22 +50,28 @@ ai-carib-intelligence-agent/
 └── .github/
     ├── copilot-instructions.md (este archivo)
     ├── agents/
-    │   ├── dynatrace/          ← Agente para Dynatrace/Davis
-    │   ├── datapower/          ← Agente para análisis de DataPower
-    │   └── structure-monitor/  ← Agente que sincroniza documentación
+    │   ├── dynatrace/           ← Agente para Dynatrace/Davis
+    │   ├── datapower/           ← Agente para análisis de DataPower
+    │   ├── structure-monitor/   ← Agente que sincroniza documentación
+    │   ├── incident-responder/  ← Agente de respuesta a incidentes
+    │   ├── daily-summary/       ← Agente de resumen diario
+    │   └── dql-assistant/       ← Asistente especializado en queries DQL
     ├── skills/
-    │   ├── dynatrace/          ← Skills de consultas DQL y anomalías
-    │   ├── datapower/          ← Skills de análisis profesional
-    │   └── structure-monitor/  ← Skills de detección y sincronización
+    │   ├── dynatrace/           ← Skills de consultas DQL y anomalías
+    │   ├── datapower/           ← Skills de análisis profesional
+    │   ├── structure-monitor/   ← Skills de detección y sincronización
+    │   ├── incident-responder/  ← Skills de correlación y reporte
+    │   └── gh-cli.md            ← Referencia completa de GitHub CLI
     ├── prompts/
     │   ├── dynatrace-chatbot.prompt.md
     │   ├── datapower-analyst.prompt.md
     │   └── structure-monitor.prompt.md
     ├── customizations/
-    │   ├── README.md
-    │   └── auto-sync.md        ← Configuración de auto-sincronización
+    │   ├── auto-sync.md         ← Configuración de auto-sincronización
+    │   └── naming-conventions.md← Convenciones de nombres y estructura
     └── toolboxes/
-        └── README.md
+        ├── report-templates.md  ← Plantillas de reportes compartidas
+        └── common-metrics.md    ← SLO/SLA, umbrales y glosario
 ```
 
 ---
