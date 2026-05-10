@@ -85,7 +85,7 @@ fetch spans
 
 ## Referencia de Sintaxis DQL
 
-Ver documento completo en `.github/skills/dyn-queries/README.md`.
+Ver documento completo en `.github/skills/dyn/dyn-queries/README.md`.
 
 ### Fuentes disponibles
 
@@ -123,5 +123,5 @@ Antes de entregar una query, verificar:
 
 ## Recursos
 
-- **Biblioteca de queries:** `.github/skills/dyn-queries/README.md`
+- **Biblioteca de queries:** `.github/skills/dyn/dyn-queries/README.md`
 - **Documentación oficial DQL:** `https://docs.dynatrace.com/docs/platform/grail/dynatrace-query-language`

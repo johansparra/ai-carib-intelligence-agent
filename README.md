@@ -107,26 +107,37 @@ ai-carib-intelligence-agent/
     ├── copilot-instructions.md
     ├── README.md
     ├── agents/
-    │   ├── dyn-analyst/             ← Análisis DQL, métricas y anomalías
-    │   ├── dyn-dql-assistant/       ← Constructor y validador de queries DQL
-    │   ├── dp-analyst/              ← Análisis de reportes gateway
-    │   ├── ops-incident-responder/  ← Respuesta a incidentes (dyn + dp)
-    │   ├── ops-daily-summary/       ← Resumen diario de métricas
-    │   ├── core-structure-monitor/  ← Sincronización automática de docs
-    │   ├── core-output-polisher/    ← Mejora léxica y gramatical
-    │   ├── core-ai-team-dev.agent.md
-    │   └── core-atlassian-jira.agent.md
+    │   ├── dyn/
+    │   │   ├── dyn-analyst/             ← Análisis DQL, métricas y anomalías
+    │   │   └── dyn-dql-assistant/       ← Constructor y validador de queries DQL
+    │   ├── dp/
+    │   │   └── dp-analyst/              ← Análisis de reportes gateway
+    │   ├── ops/
+    │   │   ├── ops-incident-responder/  ← Respuesta a incidentes (dyn + dp)
+    │   │   └── ops-daily-summary/       ← Resumen diario de métricas
+    │   └── core/
+    │       ├── core-structure-monitor/  ← Sincronización automática de docs
+    │       ├── core-output-polisher/    ← Mejora léxica y gramatical
+    │       ├── core-ai-team-dev.agent.md
+    │       └── core-atlassian-jira.agent.md
     ├── skills/
-    │   ├── dyn-queries/             ← Biblioteca DQL, API config, patrones
-    │   ├── dp-analysis/             ← Patrones de análisis, códigos de error
-    │   ├── ops-incident/            ← Correlación y pasos de remediación
-    │   ├── core-structure-monitor/  ← Lógica de detección y sincronización
-    │   ├── core-output-polisher/    ← Reglas de estilo y patrones de mejora
-    │   └── core-gh-cli.md           ← Referencia completa GitHub CLI
+    │   ├── dyn/
+    │   │   └── dyn-queries/             ← Biblioteca DQL, API config, patrones
+    │   ├── dp/
+    │   │   └── dp-analysis/             ← Patrones de análisis, códigos de error
+    │   ├── ops/
+    │   │   └── ops-incident/            ← Correlación y pasos de remediación
+    │   └── core/
+    │       ├── core-structure-monitor/  ← Lógica de detección y sincronización
+    │       ├── core-output-polisher/    ← Reglas de estilo y patrones de mejora
+    │       └── core-gh-cli.md           ← Referencia completa GitHub CLI
     ├── prompts/
-    │   ├── dyn-chatbot.prompt.md
-    │   ├── dp-analyst.prompt.md
-    │   └── core-structure-monitor.prompt.md
+    │   ├── dyn/
+    │   │   └── dyn-chatbot.prompt.md
+    │   ├── dp/
+    │   │   └── dp-analyst.prompt.md
+    │   └── core/
+    │       └── core-structure-monitor.prompt.md
     ├── customizations/
     │   ├── auto-sync.md             ← Config de auto-sincronización
     │   └── naming-conventions.md   ← Convenciones y reglas de formato

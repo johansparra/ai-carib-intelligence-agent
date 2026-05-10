@@ -10,13 +10,13 @@ This repository is a **GitHub Copilot agent configuration platform** for intelli
 
 The repo defines three operational agents orchestrated through GitHub Copilot:
 
-- **Dynatrace Agent** (`.github/agents/dyn-analyst/`) — Connects to Dynatrace Davis AI, runs DQL queries, detects anomalies. Uses skills in `.github/skills/dyn-queries/`.
-- **DataPower Agent** (`.github/agents/dp-analyst/`) — Analyzes DataPower reports and generates professional insights. Uses skills in `.github/skills/dp-analysis/`. Operates independently with no dependencies on Dynatrace.
-- **Structure Monitor** (`.github/agents/core-structure-monitor/`) — Automatically detects structural changes in the project and keeps all README.md files and Mermaid diagrams in sync. Configured via `.github/customizations/auto-sync.md`. Also manages automatic Git commits and pushes.
+- **Dynatrace Agent** (`.github/agents/dyn/dyn-analyst/`) — Connects to Dynatrace Davis AI, runs DQL queries, detects anomalies. Uses skills in `.github/skills/dyn/dyn-queries/`.
+- **DataPower Agent** (`.github/agents/dp/dp-analyst/`) — Analyzes DataPower reports and generates professional insights. Uses skills in `.github/skills/dp/dp-analysis/`. Operates independently with no dependencies on Dynatrace.
+- **Structure Monitor** (`.github/agents/core/core-structure-monitor/`) — Automatically detects structural changes in the project and keeps all README.md files and Mermaid diagrams in sync. Configured via `.github/customizations/auto-sync.md`. Also manages automatic Git commits and pushes.
 
 Two additional agents are present:
-- **ai-team-dev** (`.github/agents/core-ai-team-dev.agent.md`) — A three-role dev team (Nova/Frontend, Sage/Backend, Milo/Visual) for feature implementation. Reads `PROJECT_BRIEF.md` before starting and writes progress to `docs/sprint-N/progress.md`.
-- **Atlassian Requirements to Jira** (`.github/agents/core-atlassian-jira.agent.md`) — Transforms requirements documents into Jira epics and user stories via the Atlassian MCP Server. Requires explicit user approval before any create/update operation; enforces limits of 20 epics / 50 stories per batch.
+- **ai-team-dev** (`.github/agents/core/core-ai-team-dev.agent.md`) — A three-role dev team (Nova/Frontend, Sage/Backend, Milo/Visual) for feature implementation. Reads `PROJECT_BRIEF.md` before starting and writes progress to `docs/sprint-N/progress.md`.
+- **Atlassian Requirements to Jira** (`.github/agents/core/core-atlassian-jira.agent.md`) — Transforms requirements documents into Jira epics and user stories via the Atlassian MCP Server. Requires explicit user approval before any create/update operation; enforces limits of 20 epics / 50 stories per batch.
 
 The Chatbot Copilot acts as the central orchestrator: receives user requests, activates the appropriate agent (Dynatrace or DataPower), and assembles the final report.
 

@@ -52,26 +52,37 @@ ai-carib-intelligence-agent/
 └── .github/
     ├── copilot-instructions.md (este archivo)
     ├── agents/
-    │   ├── dyn-analyst/             ← Análisis DQL, métricas y anomalías
-    │   ├── dyn-dql-assistant/       ← Constructor y validador de queries DQL
-    │   ├── dp-analyst/              ← Análisis de reportes DataPower
-    │   ├── ops-incident-responder/  ← Respuesta a incidentes (dyn + dp)
-    │   ├── ops-daily-summary/       ← Resumen diario de métricas
-    │   ├── core-structure-monitor/  ← Sincronización automática de docs
-    │   ├── core-output-polisher/    ← Mejora léxica y gramatical
-    │   ├── core-ai-team-dev.agent.md
-    │   └── core-atlassian-jira.agent.md
+    │   ├── dyn/
+    │   │   ├── dyn-analyst/             ← Análisis DQL, métricas y anomalías
+    │   │   └── dyn-dql-assistant/       ← Constructor y validador de queries DQL
+    │   ├── dp/
+    │   │   └── dp-analyst/              ← Análisis de reportes DataPower
+    │   ├── ops/
+    │   │   ├── ops-incident-responder/  ← Respuesta a incidentes (dyn + dp)
+    │   │   └── ops-daily-summary/       ← Resumen diario de métricas
+    │   └── core/
+    │       ├── core-structure-monitor/  ← Sincronización automática de docs
+    │       ├── core-output-polisher/    ← Mejora léxica y gramatical
+    │       ├── core-ai-team-dev.agent.md
+    │       └── core-atlassian-jira.agent.md
     ├── skills/
-    │   ├── dyn-queries/             ← Biblioteca DQL, API config, patrones
-    │   ├── dp-analysis/             ← Patrones de análisis, códigos de error
-    │   ├── ops-incident/            ← Correlación y pasos de remediación
-    │   ├── core-structure-monitor/  ← Lógica de detección y sincronización
-    │   ├── core-output-polisher/    ← Reglas de estilo y patrones de mejora
-    │   └── core-gh-cli.md           ← Referencia completa GitHub CLI
+    │   ├── dyn/
+    │   │   └── dyn-queries/             ← Biblioteca DQL, API config, patrones
+    │   ├── dp/
+    │   │   └── dp-analysis/             ← Patrones de análisis, códigos de error
+    │   ├── ops/
+    │   │   └── ops-incident/            ← Correlación y pasos de remediación
+    │   └── core/
+    │       ├── core-structure-monitor/  ← Lógica de detección y sincronización
+    │       ├── core-output-polisher/    ← Reglas de estilo y patrones de mejora
+    │       └── core-gh-cli.md           ← Referencia completa GitHub CLI
     ├── prompts/
-    │   ├── dyn-chatbot.prompt.md
-    │   ├── dp-analyst.prompt.md
-    │   └── core-structure-monitor.prompt.md
+    │   ├── dyn/
+    │   │   └── dyn-chatbot.prompt.md
+    │   ├── dp/
+    │   │   └── dp-analyst.prompt.md
+    │   └── core/
+    │       └── core-structure-monitor.prompt.md
     ├── customizations/
     │   ├── auto-sync.md             ← Config de auto-sincronización
     │   └── naming-conventions.md   ← Convenciones y reglas de formato
@@ -188,8 +199,8 @@ Copilot: "¿Qué cambios se han hecho en la estructura?"
 ## Próximos Pasos
 
 - [ ] Implementar conexión con Davis IA de Dynatrace
-- [ ] Crear scripts de DQL queries en `skills/dyn-queries/`
-- [ ] Desarrollar lógica de análisis en `skills/dp-analysis/`
+- [ ] Crear scripts de DQL queries en `skills/dyn/dyn-queries/`
+- [ ] Desarrollar lógica de análisis en `skills/dp/dp-analysis/`
 - [ ] Implementar orquestación en Chatbot principal
 - [ ] Crear tests para cada componente
 

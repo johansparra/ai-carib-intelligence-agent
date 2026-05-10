@@ -95,8 +95,8 @@ graph TB
 
 El skill funciona en conjunto con:
 
-- **Prompt**: `.github/prompts/core-structure-monitor.prompt.md`
-- **Agent**: `.github/agents/core-structure-monitor/`
+- **Prompt**: `.github/prompts/core/core-structure-monitor.prompt.md`
+- **Agent**: `.github/agents/core/core-structure-monitor/`
 - **Config**: `.github/customizations/auto-sync.md`
 
 ## ⚡ Rendimiento

@@ -18,11 +18,11 @@ Todos los agentes, skills y prompts llevan un prefijo que indica su dominio:
 **Ejemplos correctos:**
 
 ```text
-dyn-analyst/          dyn-queries/          dyn-chatbot.prompt.md
-dp-analyst/           dp-analysis/          dp-analyst.prompt.md
-ops-incident-responder/  ops-incident/
-core-structure-monitor/  core-output-polisher/  core-gh-cli.md
-core-ai-team-dev.agent.md
+agents/dyn/dyn-analyst/          skills/dyn/dyn-queries/          prompts/dyn/dyn-chatbot.prompt.md
+agents/dp/dp-analyst/            skills/dp/dp-analysis/           prompts/dp/dp-analyst.prompt.md
+agents/ops/ops-incident-responder/  skills/ops/ops-incident/
+agents/core/core-structure-monitor/  skills/core/core-output-polisher/  skills/core/core-gh-cli.md
+agents/core/core-ai-team-dev.agent.md
 ```
 
 ---
@@ -33,7 +33,7 @@ core-ai-team-dev.agent.md
 | ---------------- | ------------ | --------- |
 | Agente Copilot | `{prefijo}-{nombre}.agent.md` | `core-ai-team-dev.agent.md` |
 | Prompt Copilot | `{prefijo}-{nombre}.prompt.md` | `dyn-chatbot.prompt.md` |
-| Skill / documentación | `README.md` dentro de carpeta prefijada | `skills/dyn-queries/README.md` |
+| Skill / documentación | `README.md` dentro de carpeta prefijada | `skills/dyn/dyn-queries/README.md` |
 | Toolbox | `{nombre-descriptivo}.md` | `report-templates.md` |
 | Customización | `{nombre-descriptivo}.md` | `naming-conventions.md` |
 

@@ -110,8 +110,8 @@ El reporte incluye:
 
 ## Skills y Recursos
 
-- **Skill principal:** `.github/skills/ops-incident/README.md`
-- **Queries DQL:** `.github/skills/dyn-queries/README.md`
-- **Patrones DataPower:** `.github/skills/dp-analysis/README.md`
+- **Skill principal:** `.github/skills/ops/ops-incident/README.md`
+- **Queries DQL:** `.github/skills/dyn/dyn-queries/README.md`
+- **Patrones DataPower:** `.github/skills/dp/dp-analysis/README.md`
 - **Umbrales:** `.github/toolboxes/common-metrics.md`
 - **Plantilla:** `.github/toolboxes/report-templates.md`

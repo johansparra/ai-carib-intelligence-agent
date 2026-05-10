@@ -34,7 +34,7 @@ Invocar al final de cualquier respuesta de otro agente antes de entregarla:
 
 ## Qué Hace
 
-1. **Detecta** los patrones artificiales listados en `skills/core-output-polisher/README.md`
+1. **Detecta** los patrones artificiales listados en `skills/core/core-output-polisher/README.md`
 2. **Corrige** frases de relleno, nominalizaciones, voz pasiva excesiva y corporatespeak
 3. **Mantiene** todo el contenido técnico intacto (métricas, queries, datos, tablas)
 4. **Devuelve** el texto corregido en el mismo formato (Markdown, tabla, lista)
@@ -79,5 +79,5 @@ graph LR
 
 ## Referencia de Skills
 
-- **Reglas de corrección:** `.github/skills/core-output-polisher/README.md`
+- **Reglas de corrección:** `.github/skills/core/core-output-polisher/README.md`
 - **Terminología del proyecto:** `.github/toolboxes/common-metrics.md`

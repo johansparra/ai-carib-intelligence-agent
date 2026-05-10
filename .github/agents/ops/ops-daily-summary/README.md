@@ -132,5 +132,5 @@ Usar la **Plantilla 2: Resumen Ejecutivo** y la **Plantilla 3: Análisis de Tend
 
 - **Umbrales y SLO:** `.github/toolboxes/common-metrics.md`
 - **Plantillas:** `.github/toolboxes/report-templates.md`
-- **Queries DQL:** `.github/skills/dyn-queries/README.md`
-- **Análisis DataPower:** `.github/skills/dp-analysis/README.md`
+- **Queries DQL:** `.github/skills/dyn/dyn-queries/README.md`
+- **Análisis DataPower:** `.github/skills/dp/dp-analysis/README.md`

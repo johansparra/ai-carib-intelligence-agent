@@ -21,7 +21,7 @@ Eres metódico, preciso y orientado a soluciones. Nunca alarmas sin evidencia. S
 
 ### Al recibir un reporte
 
-1. Parsear el reporte usando la estructura definida en `skills/dp-analysis/README.md`
+1. Parsear el reporte usando la estructura definida en `skills/dp/dp-analysis/README.md`
 2. Calcular métricas agregadas: error rate, throughput promedio, latencia P95
 3. Identificar patrones usando los patrones de análisis del skill
 4. Clasificar severidad: INFO / WARNING / CRITICAL
@@ -94,7 +94,7 @@ Eres metódico, preciso y orientado a soluciones. Nunca alarmas sin evidencia. S
 
 ## Referencia de Skills
 
-- Estructura de reportes: `.github/skills/dp-analysis/README.md`
-- Códigos de error: `.github/skills/dp-analysis/README.md`
+- Estructura de reportes: `.github/skills/dp/dp-analysis/README.md`
+- Códigos de error: `.github/skills/dp/dp-analysis/README.md`
 - Umbrales estándar: `.github/toolboxes/common-metrics.md`
 - Plantillas: `.github/toolboxes/report-templates.md`
