@@ -17,11 +17,11 @@ Todos los archivos del proyecto usan un prefijo de dominio:
 
 ## Estructura de Carpetas
 
-Los agentes, skills y prompts se organizan en subgrupos por dominio:
+Dentro de cada carpeta oficial, los archivos se agrupan en subgrupos por dominio. No se usan sub-subcarpetas — todo es un archivo plano dentro del subgrupo:
 
 ```text
-agents/{dominio}/{prefijo}-{nombre}/README.md
-skills/{dominio}/{prefijo}-{nombre}/README.md
+agents/{dominio}/{prefijo}-{nombre}.agent.md
+skills/{dominio}/{prefijo}-{nombre}.md
 prompts/{dominio}/{prefijo}-{nombre}.prompt.md
 instructions/{prefijo}-{nombre}.instructions.md
 ```
@@ -30,11 +30,10 @@ instructions/{prefijo}-{nombre}.instructions.md
 
 | Tipo | Convención |
 | ---- | ---------- |
-| Agente (carpeta) | `agents/{dom}/{prefijo}-{nombre}/README.md` |
-| Agente (archivo) | `{prefijo}-{nombre}.agent.md` |
-| Prompt | `{prefijo}-{nombre}.prompt.md` |
-| Skill | `skills/{dom}/{prefijo}-{nombre}/README.md` |
-| Instrucción | `{prefijo}-{nombre}.instructions.md` |
+| Agente | `agents/{dom}/{prefijo}-{nombre}.agent.md` |
+| Prompt | `prompts/{dom}/{prefijo}-{nombre}.prompt.md` |
+| Skill | `skills/{dom}/{prefijo}-{nombre}.md` |
+| Instrucción | `instructions/{prefijo}-{nombre}.instructions.md` |
 
 Todos los nombres usan `kebab-case`.
 

@@ -53,32 +53,32 @@ ai-carib-intelligence-agent/
     ├── copilot-instructions.md (este archivo)
     ├── agents/
     │   ├── dyn/
-    │   │   ├── dyn-analyst/             ← Análisis DQL, métricas y anomalías
-    │   │   └── dyn-dql-assistant/       ← Constructor y validador de queries DQL
+    │   │   ├── dyn-analyst.agent.md             ← Análisis DQL, métricas y anomalías
+    │   │   └── dyn-dql-assistant.agent.md       ← Constructor y validador de queries DQL
     │   ├── dp/
-    │   │   └── dp-analyst/              ← Análisis de reportes DataPower
+    │   │   └── dp-analyst.agent.md              ← Análisis de reportes DataPower
     │   ├── ops/
-    │   │   ├── ops-incident-responder/  ← Respuesta a incidentes (dyn + dp)
-    │   │   └── ops-daily-summary/       ← Resumen diario de métricas
+    │   │   ├── ops-incident-responder.agent.md  ← Respuesta a incidentes (dyn + dp)
+    │   │   └── ops-daily-summary.agent.md       ← Resumen diario de métricas
     │   └── core/
-    │       ├── core-structure-monitor/  ← Sincronización automática de docs
-    │       ├── core-output-polisher/    ← Mejora léxica y gramatical
+    │       ├── core-structure-monitor.agent.md  ← Sincronización automática de docs
+    │       ├── core-output-polisher.agent.md    ← Mejora léxica y gramatical
     │       ├── core-ai-team-dev.agent.md
     │       └── core-atlassian-jira.agent.md
     ├── skills/
     │   ├── dyn/
-    │   │   └── dyn-queries/             ← Biblioteca DQL, API config, patrones
+    │   │   └── dyn-queries.md             ← Biblioteca DQL, API config, patrones
     │   ├── dp/
-    │   │   └── dp-analysis/             ← Patrones de análisis, códigos de error
+    │   │   └── dp-analysis.md             ← Patrones de análisis, códigos de error
     │   ├── ops/
-    │   │   ├── ops-incident/            ← Correlación y pasos de remediación
-    │   │   ├── ops-report-templates.md  ← Plantillas de reportes compartidas
-    │   │   └── ops-metrics-thresholds.md ← SLO/SLA, umbrales y glosario
+    │   │   ├── ops-incident.md            ← Correlación y pasos de remediación
+    │   │   ├── ops-report-templates.md    ← Plantillas de reportes compartidas
+    │   │   └── ops-metrics-thresholds.md  ← SLO/SLA, umbrales y glosario
     │   └── core/
-    │       ├── core-structure-monitor/  ← Lógica de detección y sincronización
-    │       ├── core-output-polisher/    ← Reglas de estilo y patrones de mejora
-    │       ├── core-gh-cli.md           ← Referencia completa GitHub CLI
-    │       ├── core-auto-sync.md        ← Config de auto-sincronización
+    │       ├── core-structure-monitor.md  ← Lógica de detección y sincronización
+    │       ├── core-output-polisher.md    ← Reglas de estilo y patrones de mejora
+    │       ├── core-gh-cli.md             ← Referencia completa GitHub CLI
+    │       ├── core-auto-sync.md          ← Config de auto-sincronización
     │       └── core-naming-conventions.md ← Convenciones y reglas de formato
     ├── prompts/
     │   ├── dyn/

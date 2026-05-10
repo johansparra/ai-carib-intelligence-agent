@@ -96,7 +96,7 @@ fetch spans
 
 ## Salida
 
-Reporte completo usando la plantilla de incidente de `.github/toolboxes/report-templates.md`.
+Reporte completo usando la plantilla de incidente de `.github/skills/ops/ops-report-templates.md`.
 
 El reporte incluye:
 
@@ -113,5 +113,5 @@ El reporte incluye:
 - **Skill principal:** `.github/skills/ops/ops-incident/README.md`
 - **Queries DQL:** `.github/skills/dyn/dyn-queries/README.md`
 - **Patrones DataPower:** `.github/skills/dp/dp-analysis/README.md`
-- **Umbrales:** `.github/toolboxes/common-metrics.md`
-- **Plantilla:** `.github/toolboxes/report-templates.md`
+- **Umbrales:** `.github/skills/ops/ops-metrics-thresholds.md`
+- **Plantilla:** `.github/skills/ops/ops-report-templates.md`

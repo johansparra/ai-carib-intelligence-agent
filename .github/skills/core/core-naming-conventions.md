@@ -31,11 +31,10 @@ agents/core/core-ai-team-dev.agent.md
 
 | Tipo de archivo | Convención | Ejemplo |
 | ---------------- | ------------ | --------- |
-| Agente (carpeta) | `agents/{dom}/{prefijo}-{nombre}/README.md` | `agents/dyn/dyn-analyst/README.md` |
-| Agente (archivo) | `{prefijo}-{nombre}.agent.md` | `agents/core/core-ai-team-dev.agent.md` |
-| Prompt | `{prefijo}-{nombre}.prompt.md` | `prompts/dyn/dyn-chatbot.prompt.md` |
-| Skill | `skills/{dom}/{prefijo}-{nombre}/README.md` | `skills/dyn/dyn-queries/README.md` |
-| Instrucción | `{prefijo}-{nombre}.instructions.md` | `instructions/core-naming-conventions.instructions.md` |
+| Agente | `agents/{dom}/{prefijo}-{nombre}.agent.md` | `agents/dyn/dyn-analyst.agent.md` |
+| Prompt | `prompts/{dom}/{prefijo}-{nombre}.prompt.md` | `prompts/dyn/dyn-chatbot.prompt.md` |
+| Skill | `skills/{dom}/{prefijo}-{nombre}.md` | `skills/dyn/dyn-queries.md` |
+| Instrucción | `instructions/{prefijo}-{nombre}.instructions.md` | `instructions/core-naming-conventions.instructions.md` |
 
 Todos los nombres de archivos y carpetas usan `kebab-case` (minúsculas con guiones).
 

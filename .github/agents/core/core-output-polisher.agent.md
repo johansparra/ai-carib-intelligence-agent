@@ -80,4 +80,4 @@ graph LR
 ## Referencia de Skills
 
 - **Reglas de corrección:** `.github/skills/core/core-output-polisher/README.md`
-- **Terminología del proyecto:** `.github/toolboxes/common-metrics.md`
+- **Terminología del proyecto:** `.github/skills/ops/ops-metrics-thresholds.md`

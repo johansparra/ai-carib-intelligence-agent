@@ -44,7 +44,7 @@ graph LR
 
 ## 📝 Configuración
 
-Ver: [.github/customizations/auto-sync.md](../customizations/auto-sync.md)
+Ver: [.github/skills/core/core-auto-sync.md](../skills/core/core-auto-sync.md)
 
 ## 💡 Ejemplos
 

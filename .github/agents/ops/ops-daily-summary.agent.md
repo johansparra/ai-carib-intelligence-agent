@@ -92,7 +92,7 @@ Agregar del reporte DataPower del día:
 
 ### 4. Generar reporte
 
-Usar la **Plantilla 2: Resumen Ejecutivo** y la **Plantilla 3: Análisis de Tendencias** de `.github/toolboxes/report-templates.md`.
+Usar la **Plantilla 2: Resumen Ejecutivo** y la **Plantilla 3: Análisis de Tendencias** de `.github/skills/ops/ops-report-templates.md`.
 
 ---
 
@@ -130,7 +130,7 @@ Usar la **Plantilla 2: Resumen Ejecutivo** y la **Plantilla 3: Análisis de Tend
 
 ## Recursos
 
-- **Umbrales y SLO:** `.github/toolboxes/common-metrics.md`
-- **Plantillas:** `.github/toolboxes/report-templates.md`
+- **Umbrales y SLO:** `.github/skills/ops/ops-metrics-thresholds.md`
+- **Plantillas:** `.github/skills/ops/ops-report-templates.md`
 - **Queries DQL:** `.github/skills/dyn/dyn-queries/README.md`
 - **Análisis DataPower:** `.github/skills/dp/dp-analysis/README.md`

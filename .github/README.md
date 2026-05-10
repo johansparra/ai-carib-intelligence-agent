@@ -4,38 +4,19 @@ Esta carpeta contiene la estructura de agentes, skills, prompts e instrucciones 
 
 ## Carpetas Oficiales de Copilot
 
-- **`agents/`** - Agentes independientes organizados por dominio
+- **`agents/`** - Agentes independientes organizados por dominio (todos como `.agent.md`)
 
-  - **`dyn/`** — Dynatrace
-    - `dyn-analyst/` - Análisis DQL, métricas y anomalías con Davis AI
-    - `dyn-dql-assistant/` - Constructor y validador de queries DQL
-  - **`dp/`** — DataPower
-    - `dp-analyst/` - Análisis profesional de reportes de gateway
-  - **`ops/`** — Operaciones (cross-domain)
-    - `ops-incident-responder/` - Respuesta a incidentes (correlaciona dyn + dp)
-    - `ops-daily-summary/` - Resumen diario automático de métricas
-  - **`core/`** — Infraestructura transversal
-    - `core-structure-monitor/` - Sincronización automática de documentación
-    - `core-output-polisher/` - Mejora léxica y gramatical de salidas
-    - `core-ai-team-dev.agent.md` - Equipo de desarrollo (Nova/Sage/Milo)
-    - `core-atlassian-jira.agent.md` - Transformación de requerimientos a Jira
+  - **`dyn/`** — `dyn-analyst.agent.md`, `dyn-dql-assistant.agent.md`
+  - **`dp/`** — `dp-analyst.agent.md`
+  - **`ops/`** — `ops-incident-responder.agent.md`, `ops-daily-summary.agent.md`
+  - **`core/`** — `core-structure-monitor.agent.md`, `core-output-polisher.agent.md`, `core-ai-team-dev.agent.md`, `core-atlassian-jira.agent.md`
 
-- **`skills/`** - Conocimiento técnico reutilizable por los agentes
+- **`skills/`** - Conocimiento técnico reutilizable por los agentes (todos como `.md`)
 
-  - **`dyn/`** — Dynatrace
-    - `dyn-queries/` - Configuración API, biblioteca de queries DQL, sintaxis
-  - **`dp/`** — DataPower
-    - `dp-analysis/` - Estructura de reportes, patrones de análisis, códigos de error
-  - **`ops/`** — Operaciones
-    - `ops-incident/` - Pasos de correlación y remediación por patrón
-    - `ops-report-templates.md` - 4 plantillas estándar: incidente, ejecutivo, tendencias, alerta
-    - `ops-metrics-thresholds.md` - SLO/SLA, umbrales de alerta y glosario
-  - **`core/`** — Infraestructura
-    - `core-structure-monitor/` - Lógica de detección y sincronización
-    - `core-output-polisher/` - 7 categorías de patrones de mejora en español
-    - `core-gh-cli.md` - Referencia completa de GitHub CLI
-    - `core-auto-sync.md` - Configuración de sincronización automática
-    - `core-naming-conventions.md` - Convenciones de nombres, commits y formato Markdown
+  - **`dyn/`** — `dyn-queries.md`
+  - **`dp/`** — `dp-analysis.md`
+  - **`ops/`** — `ops-incident.md`, `ops-report-templates.md`, `ops-metrics-thresholds.md`
+  - **`core/`** — `core-structure-monitor.md`, `core-output-polisher.md`, `core-gh-cli.md`, `core-auto-sync.md`, `core-naming-conventions.md`
 
 - **`prompts/`** - Instrucciones de rol y comportamiento para cada agente
 
