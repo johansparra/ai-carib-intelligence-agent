@@ -66,20 +66,16 @@ ai-carib-intelligence-agent/
     │       ├── core-ai-team-dev.agent.md
     │       └── core-atlassian-jira.agent.md
     ├── skills/
-    │   ├── dyn/
-    │   │   └── dyn-queries.md             ← Biblioteca DQL, API config, patrones
-    │   ├── dp/
-    │   │   └── dp-analysis.md             ← Patrones de análisis, códigos de error
-    │   ├── ops/
-    │   │   ├── ops-incident.md            ← Correlación y pasos de remediación
-    │   │   ├── ops-report-templates.md    ← Plantillas de reportes compartidas
-    │   │   └── ops-metrics-thresholds.md  ← SLO/SLA, umbrales y glosario
-    │   └── core/
-    │       ├── core-structure-monitor.md  ← Lógica de detección y sincronización
-    │       ├── core-output-polisher.md    ← Reglas de estilo y patrones de mejora
-    │       ├── core-gh-cli.md             ← Referencia completa GitHub CLI
-    │       ├── core-auto-sync.md          ← Config de auto-sincronización
-    │       └── core-naming-conventions.md ← Convenciones y reglas de formato
+    │   ├── dyn-queries/SKILL.md             ← Biblioteca DQL, API config, patrones
+    │   ├── dp-analysis/SKILL.md             ← Patrones de análisis, códigos de error
+    │   ├── ops-incident/SKILL.md            ← Correlación y pasos de remediación
+    │   ├── ops-report-templates/SKILL.md    ← Plantillas de reportes compartidas
+    │   ├── ops-metrics-thresholds/SKILL.md  ← SLO/SLA, umbrales y glosario
+    │   ├── core-structure-monitor/SKILL.md  ← Lógica de detección y sincronización
+    │   ├── core-output-polisher/SKILL.md    ← Reglas de estilo y patrones de mejora
+    │   ├── core-gh-cli/SKILL.md             ← Referencia completa GitHub CLI
+    │   ├── core-auto-sync/SKILL.md          ← Config de auto-sincronización
+    │   └── core-naming-conventions/SKILL.md ← Convenciones y reglas de formato
     ├── prompts/
     │   ├── dyn/
     │   │   └── dyn-chatbot.prompt.md

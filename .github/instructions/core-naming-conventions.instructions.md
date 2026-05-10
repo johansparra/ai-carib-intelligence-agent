@@ -21,7 +21,7 @@ Dentro de cada carpeta oficial, los archivos se agrupan en subgrupos por dominio
 
 ```text
 agents/{dominio}/{prefijo}-{nombre}.agent.md
-skills/{dominio}/{prefijo}-{nombre}.md
+skills/{prefijo}-{nombre}/SKILL.md
 prompts/{dominio}/{prefijo}-{nombre}.prompt.md
 instructions/{prefijo}-{nombre}.instructions.md
 ```
@@ -32,7 +32,7 @@ instructions/{prefijo}-{nombre}.instructions.md
 | ---- | ---------- |
 | Agente | `agents/{dom}/{prefijo}-{nombre}.agent.md` |
 | Prompt | `prompts/{dom}/{prefijo}-{nombre}.prompt.md` |
-| Skill | `skills/{dom}/{prefijo}-{nombre}.md` |
+| Skill | `skills/{prefijo}-{nombre}/SKILL.md` |
 | Instrucción | `instructions/{prefijo}-{nombre}.instructions.md` |
 
 Todos los nombres usan `kebab-case`.

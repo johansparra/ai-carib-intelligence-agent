@@ -18,10 +18,10 @@ Todos los agentes, skills y prompts llevan un prefijo que indica su dominio:
 **Ejemplos correctos:**
 
 ```text
-agents/dyn/dyn-analyst/          skills/dyn/dyn-queries/          prompts/dyn/dyn-chatbot.prompt.md
-agents/dp/dp-analyst/            skills/dp/dp-analysis/           prompts/dp/dp-analyst.prompt.md
-agents/ops/ops-incident-responder/  skills/ops/ops-incident/
-agents/core/core-structure-monitor/  skills/core/core-output-polisher/  skills/core/core-gh-cli.md
+agents/dyn/dyn-analyst.agent.md          skills/dyn-queries/SKILL.md          prompts/dyn/dyn-chatbot.prompt.md
+agents/dp/dp-analyst.agent.md            skills/dp-analysis/SKILL.md          prompts/dp/dp-analyst.prompt.md
+agents/ops/ops-incident-responder.agent.md  skills/ops-incident/SKILL.md
+agents/core/core-structure-monitor.agent.md  skills/core-output-polisher/SKILL.md
 agents/core/core-ai-team-dev.agent.md
 ```
 
@@ -33,7 +33,7 @@ agents/core/core-ai-team-dev.agent.md
 | ---------------- | ------------ | --------- |
 | Agente | `agents/{dom}/{prefijo}-{nombre}.agent.md` | `agents/dyn/dyn-analyst.agent.md` |
 | Prompt | `prompts/{dom}/{prefijo}-{nombre}.prompt.md` | `prompts/dyn/dyn-chatbot.prompt.md` |
-| Skill | `skills/{dom}/{prefijo}-{nombre}.md` | `skills/dyn/dyn-queries.md` |
+| Skill | `skills/{prefijo}-{nombre}/SKILL.md` | `skills/dyn-queries/SKILL.md` |
 | Instrucción | `instructions/{prefijo}-{nombre}.instructions.md` | `instructions/core-naming-conventions.instructions.md` |
 
 Todos los nombres de archivos y carpetas usan `kebab-case` (minúsculas con guiones).

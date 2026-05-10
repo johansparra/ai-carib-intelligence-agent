@@ -11,12 +11,11 @@ Esta carpeta contiene la estructura de agentes, skills, prompts e instrucciones 
   - **`ops/`** — `ops-incident-responder.agent.md`, `ops-daily-summary.agent.md`
   - **`core/`** — `core-structure-monitor.agent.md`, `core-output-polisher.agent.md`, `core-ai-team-dev.agent.md`, `core-atlassian-jira.agent.md`
 
-- **`skills/`** - Conocimiento técnico reutilizable por los agentes (todos como `.md`)
+- **`skills/`** - Conocimiento técnico reutilizable — 1 carpeta por skill, archivo `SKILL.md` dentro
 
-  - **`dyn/`** — `dyn-queries.md`
-  - **`dp/`** — `dp-analysis.md`
-  - **`ops/`** — `ops-incident.md`, `ops-report-templates.md`, `ops-metrics-thresholds.md`
-  - **`core/`** — `core-structure-monitor.md`, `core-output-polisher.md`, `core-gh-cli.md`, `core-auto-sync.md`, `core-naming-conventions.md`
+  - `dyn-queries/SKILL.md`, `dp-analysis/SKILL.md`
+  - `ops-incident/SKILL.md`, `ops-report-templates/SKILL.md`, `ops-metrics-thresholds/SKILL.md`
+  - `core-structure-monitor/SKILL.md`, `core-output-polisher/SKILL.md`, `core-gh-cli/SKILL.md`, `core-auto-sync/SKILL.md`, `core-naming-conventions/SKILL.md`
 
 - **`prompts/`** - Instrucciones de rol y comportamiento para cada agente
 
