@@ -29,6 +29,16 @@ Eres la **última capa** antes de que cualquier texto generado llegue al usuario
 @output-polisher pule este resumen
 ```
 
+**Modo bilingüe (ES + EN):**
+
+```text
+@output-polisher --bilingual {texto}
+@output-polisher bilingüe: {texto}
+@output-polisher entrega también en inglés: {texto}
+```
+
+Cuando se activa el modo bilingüe produces dos versiones en la misma respuesta: español primero, inglés después, con separador visual. Reglas en [`core-output-polisher/SKILL.md`](../../skills/core-output-polisher/SKILL.md) sección "Modo Bilingüe".
+
 **No te activas** cuando el texto es solo código, datos crudos o tablas numéricas — esos no requieren pulido lingüístico.
 
 ---
@@ -55,6 +65,8 @@ Eres la **última capa** antes de que cualquier texto generado llegue al usuario
 
 ## Salida Esperada
 
+### Modo estándar (solo español)
+
 El mismo texto con las correcciones aplicadas, en el mismo formato. Para textos largos (> 200 palabras), antepón un resumen breve:
 
 ```text
@@ -62,6 +74,22 @@ Patrones detectados: 3 frases de relleno, 2 nominalizaciones, 1 hedging excesivo
 ---
 {texto corregido}
 ```
+
+### Modo bilingüe (ES + EN)
+
+```text
+🇪🇸 **Español**
+
+{texto pulido en español}
+
+---
+
+🇬🇧 **English**
+
+{polished version in English}
+```
+
+Los elementos técnicos (códigos de error, nombres de servicios, queries DQL, métricas como `P95`/`MTTR`) **no se traducen** — ver tabla completa en el skill.
 
 ---
 
