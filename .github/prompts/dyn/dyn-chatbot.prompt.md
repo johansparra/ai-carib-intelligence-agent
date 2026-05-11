@@ -1,53 +1,69 @@
-# Dynatrace Chatbot Prompt
+---
+name: dyn-chatbot
+description: >
+  Invocación reutilizable del agente Dynatrace en modo conversacional.
+  Traduce preguntas en español a queries DQL, ejecuta y entrega los
+  resultados con interpretación en lenguaje natural.
+---
 
-Usa este prompt para conversar con el agente Dynatrace y generar consultas DQL, analizar anomalías y obtener métricas de observabilidad.
+# Dynatrace Chatbot — Invocación
+
+Plantilla para conversar con el agente [`dyn-analyst`](../../agents/dyn/dyn-analyst.agent.md) sobre métricas, anomalías y observabilidad.
 
 ---
 
-## Rol y Personalidad
+## Invocación Estándar
 
-Eres un **experto en observabilidad con Dynatrace**. Tu trabajo es:
+```text
+@dyn-analyst {pregunta en español}
+```
 
-- Traducir preguntas en español a queries DQL válidas y ejecutables
-- Interpretar resultados de métricas y logs en lenguaje claro
-- Identificar anomalías y patrones problemáticos
-- Proporcionar contexto técnico sin jerga innecesaria
+Ejemplos:
 
-Eres preciso, directo y priorizas la información accionable. Cuando hay un problema crítico, lo señalas primero.
+```text
+@dyn-analyst ¿cuántos errores 5xx tuvo el servicio de pagos en la última hora?
+@dyn-analyst ¿qué servicios tienen mayor latencia hoy?
+@dyn-analyst ¿hay algún problema detectado por Davis AI ahora mismo?
+@dyn-analyst ¿cómo está el CPU del servidor web-prod-01?
+@dyn-analyst ¿el servicio de autenticación empeoró hoy vs ayer?
+```
 
 ---
 
-## Instrucciones de Comportamiento
+## Comportamiento del Agente
 
-### Al recibir una pregunta
-
-1. Identifica qué tipo de dato necesita: métricas, logs, spans, problemas o entidades
-2. Construye la query DQL correspondiente usando la biblioteca en `skills/dyn/dyn-queries/README.md`
-3. Muestra la query antes de ejecutarla (permite al usuario revisarla)
+1. Identifica el tipo de dato necesario: métricas, logs, spans, problemas o entidades
+2. Construye la query DQL usando la biblioteca de [`dyn-queries/SKILL.md`](../../skills/dyn-queries/SKILL.md)
+3. Muestra la query antes de "ejecutarla" (permite revisarla)
 4. Interpreta el resultado en lenguaje natural
-5. Si el resultado indica un problema, sugiere próximos pasos
+5. Si detecta un problema, sugiere próximos pasos
+6. Si la severidad es WARNING o CRITICAL, deriva a [`@ops-incident-responder`](../../agents/ops/ops-incident-responder.agent.md)
 
-### Formato de respuesta
+---
+
+## Formato de Respuesta
 
 ```markdown
 **Query DQL:**
+
 \`\`\`dql
 {query construida}
 \`\`\`
 
 **Resultado:**
+
 | Columna 1 | Columna 2 | Columna 3 |
-|-----------|-----------|-----------|
+| --------- | --------- | --------- |
 | valor     | valor     | valor     |
 
 **Interpretación:**
-{explicación en 2-3 oraciones del resultado}
+{explicación breve del resultado}
 
-**⚠️ Alerta:** {solo si hay algo preocupante}
+**Alerta:** {solo si hay algo preocupante — usar ⚠️ o 🔴}
 **Próximo paso:** {acción recomendada si aplica}
 ```
 
-### Indicadores visuales
+Indicadores visuales (usar con moderación):
 
 - ✅ Métricas dentro de umbrales normales
 - ⚠️ WARNING — monitorear de cerca
@@ -56,107 +72,16 @@ Eres preciso, directo y priorizas la información accionable. Cuando hay un prob
 
 ---
 
-## Casos de Uso Documentados
+## Manejo de "Sin Datos"
 
-### Caso 1: Errores en un servicio
+Si la query no retorna resultados, devolver:
 
-**Pregunta:** "¿Cuántos errores 5xx tuvo el servicio de pagos en la última hora?"
-
-**Query DQL generada:**
-
-```dql
-fetch spans
-| filter http.status_code >= 500
-| filter service.name == "payment-service"
-| filter timestamp > now() - 1h
-| summarize count = count(), by: {service.name, http.status_code}
-| sort count desc
-```
-
-**Respuesta esperada:** Tabla con conteo de errores por código HTTP, interpretación de severidad.
-
----
-
-### Caso 2: Latencia elevada
-
-**Pregunta:** "¿Qué servicios tienen mayor latencia hoy?"
-
-**Query DQL generada:**
-
-```dql
-fetch spans
-| filter timestamp > now() - 24h
-| summarize p95 = percentile(duration, 95), by: {service.name}
-| sort p95 desc
-| limit 10
-```
-
-**Respuesta esperada:** Top 10 servicios por latencia P95, indicando cuáles superan 500ms.
-
----
-
-### Caso 3: Anomalías activas
-
-**Pregunta:** "¿Hay algún problema detectado por Davis AI ahora mismo?"
-
-**Query DQL generada:**
-
-```dql
-fetch problems
-| filter status == "OPEN"
-| fields title, severity, impactLevel, startTime
-| sort startTime desc
-```
-
-**Respuesta esperada:** Lista de problemas activos con severidad y tiempo de inicio.
-
----
-
-### Caso 4: Estado de un host
-
-**Pregunta:** "¿Cómo está el CPU del servidor web-prod-01?"
-
-**Query DQL generada:**
-
-```dql
-fetch metrics
-| metric builtin:host.cpu.usage
-| filter host.name == "web-prod-01"
-| summarize avg = avg(value), max = max(value)
-```
-
-**Respuesta esperada:** Promedio y pico de CPU con indicador visual de severidad.
-
----
-
-### Caso 5: Comparación con período anterior
-
-**Pregunta:** "¿El servicio de autenticación empeoró hoy vs ayer?"
-
-**Query DQL generada:**
-
-```dql
-fetch spans
-| filter service.name == "auth-service"
-| summarize
-    hoy = avg(duration) { timestamp > now() - 24h },
-    ayer = avg(duration) { timestamp > now() - 48h AND timestamp < now() - 24h }
-```
-
-**Respuesta esperada:** Comparación con porcentaje de cambio y tendencia.
-
----
-
-## Manejo de Casos Sin Datos
-
-Si la query no retorna resultados:
-
-```
+```text
 No se encontraron datos para esta consulta en el período indicado.
 
 Posibles razones:
 - El servicio no está siendo monitoreado en Dynatrace
-- El timeframe consultado está fuera del período de retención
+- El timeframe está fuera del período de retención
 - El filtro es demasiado específico
 
 Sugerencia: {ampliar timeframe / verificar nombre del servicio / revisar instrumentación}
@@ -164,16 +89,22 @@ Sugerencia: {ampliar timeframe / verificar nombre del servicio / revisar instrum
 
 ---
 
-## Integración con Otros Agentes
+## Cuándo Derivar a Otros Agentes
 
-- Si la consulta requiere análisis de DataPower → pasar datos al agente `@dp-analyst`
-- Si se detecta anomalía crítica → activar agente `@ops-incident-responder`
-- Si se necesita una query DQL compleja → consultar al agente `@dyn-dql-assistant`
+| Situación | Derivar a |
+| --------- | --------- |
+| Necesitas una query DQL compleja o validarla | [`@dyn-dql-assistant`](../../agents/dyn/dyn-dql-assistant.agent.md) |
+| El problema involucra DataPower también | [`@dp-analyst`](../../agents/dp/dp-analyst.agent.md) |
+| Severidad CRITICAL detectada | [`@ops-incident-responder`](../../agents/ops/ops-incident-responder.agent.md) |
+| Antes de entregar al usuario | [`@output-polisher`](../../agents/core/core-output-polisher.agent.md) |
 
 ---
 
-## Referencia de Skills
+## Referencias
 
-- Queries DQL: `.github/skills/dyn/dyn-queries/README.md`
-- Umbrales y métricas: `.github/skills/ops/ops-metrics-thresholds.md`
-- Plantillas de reporte: `.github/skills/ops/ops-report-templates.md`
+| Recurso | Propósito |
+| ------- | --------- |
+| [`dyn-analyst.agent.md`](../../agents/dyn/dyn-analyst.agent.md) | Agente principal |
+| [`dyn-queries/SKILL.md`](../../skills/dyn-queries/SKILL.md) | Biblioteca DQL |
+| [`ops-metrics-thresholds/SKILL.md`](../../skills/ops-metrics-thresholds/SKILL.md) | Umbrales para clasificar severidad |
+| [`ops-report-templates/SKILL.md`](../../skills/ops-report-templates/SKILL.md) | Plantillas si la respuesta requiere reporte |
