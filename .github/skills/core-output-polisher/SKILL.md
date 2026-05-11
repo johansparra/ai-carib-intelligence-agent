@@ -1,23 +1,15 @@
-# Output Polisher Skill
+# Output Polisher — Skill
 
-Skill que mejora la calidad léxica y gramatical de las salidas generadas por los agentes del proyecto. Actúa como post-procesador de cualquier texto antes de entregarlo al usuario.
+Catálogo de patrones lingüísticos que el agente [`output-polisher`](../../agents/core/core-output-polisher.agent.md) detecta y corrige antes de entregar texto al usuario.
 
-Inspirado en el patrón del **Finnish Humanizer** de [awesome-copilot](https://awesome-copilot.github.com/), adaptado para español técnico-profesional.
-
----
-
-## Propósito
-
-Los agentes (Dynatrace, DataPower, Incident Responder, Daily Summary) generan textos funcionales pero con patrones típicos de IA que suenan artificiales, redundantes o poco naturales. Este skill los detecta y corrige antes de que el texto llegue al usuario.
+Inspirado en el patrón **Finnish Humanizer** de [awesome-copilot](https://awesome-copilot.github.com/), adaptado a español técnico-profesional.
 
 ---
 
-## Patrones a Detectar y Corregir
-
-### 1. Frases de relleno de IA — eliminar
+## 1. Frases de Relleno — Eliminar
 
 | Detectar | Reemplazar con |
-| ---------- | ---------------- |
+| -------- | -------------- |
 | `cabe destacar que` | *(eliminar, ir directo al punto)* |
 | `es importante señalar que` | *(eliminar)* |
 | `en este sentido` | *(eliminar)* |
@@ -31,10 +23,12 @@ Los agentes (Dynatrace, DataPower, Incident Responder, Daily Summary) generan te
 | `de conformidad con` | `según` |
 | `con miras a` | `para` |
 
-### 2. Nominalizaciones innecesarias — descomponer
+---
+
+## 2. Nominalizaciones — Descomponer
 
 | Detectar | Reemplazar con |
-| ---------- | ---------------- |
+| -------- | -------------- |
 | `la realización de` | `realizar` |
 | `el análisis de` | `analizar` |
 | `la implementación de` | `implementar` |
@@ -42,42 +36,50 @@ Los agentes (Dynatrace, DataPower, Incident Responder, Daily Summary) generan te
 | `la detección de` | `detectar` |
 | `la generación de` | `generar` |
 
-### 3. Voz pasiva excesiva — activar
+---
+
+## 3. Voz Pasiva Excesiva — Activar
 
 | Detectar | Reemplazar con |
-| ---------- | ---------------- |
-| `se puede observar que` | *(eliminar, afirmar directamente)* |
+| -------- | -------------- |
+| `se puede observar que` | *(afirmar directamente)* |
 | `se realizó el análisis` | `el análisis muestra` |
 | `fue detectado un error` | `se detectó un error` / `hay un error` |
 | `ha sido identificado` | `identificamos` / `el sistema identificó` |
 
-### 4. Corporatespeak inflado — desinflar
+---
+
+## 4. Corporatespeak — Desinflar
 
 | Detectar | Reemplazar con |
-| ---------- | ---------------- |
-| `robusto` (sin justificación) | *(eliminar o especificar qué lo hace robusto)* |
-| `solución integral` | *(describir qué resuelve exactamente)* |
+| -------- | -------------- |
+| `robusto` (sin justificación) | *(eliminar o especificar)* |
+| `solución integral` | *(describir qué resuelve)* |
 | `de primer nivel` | *(eliminar)* |
 | `innovador` | *(eliminar o justificar)* |
 | `sólido` | *(eliminar o especificar)* |
 | `óptimo` | *(especificar qué lo hace óptimo)* |
 | `de manera eficiente` | *(eliminar si no agrega info)* |
 
-### 5. Aperturas formulaicas — reemplazar
+---
+
+## 5. Aperturas Formulaicas — Reemplazar
 
 | Detectar | Reemplazar con |
-| ---------- | ---------------- |
+| -------- | -------------- |
 | `En primer lugar, ...` | *(ir directo al primer punto)* |
-| `Por otro lado, ...` | *(usar el conector apropiado al contenido)* |
+| `Por otro lado, ...` | *(usar conector apropiado al contenido)* |
 | `En conclusión, ...` | `En resumen:` / *(ir directo)* |
 | `A modo de resumen, ...` | `En resumen:` |
 | `Dicho lo anterior, ...` | *(eliminar)* |
 | `Habiendo analizado todo lo anterior, ...` | *(eliminar)* |
 
-### 6. Redundancias — condensar
+---
+
+## 6. Redundancias — Condensar
 
 | Detectar | Reemplazar con |
-| ---------- | ---------------- |
+| -------- | -------------- |
 | `actualmente en este momento` | `actualmente` |
 | `período de tiempo` | `período` |
 | `resultado final` | `resultado` |
@@ -85,32 +87,34 @@ Los agentes (Dynatrace, DataPower, Incident Responder, Daily Summary) generan te
 | `volver a repetir` | `repetir` |
 | `colaborar conjuntamente` | `colaborar` |
 
-### 7. Hedging excesivo — afirmar con confianza
+---
+
+## 7. Hedging Excesivo — Afirmar con Confianza
 
 | Detectar | Reemplazar con |
-| ---------- | ---------------- |
+| -------- | -------------- |
 | `podría potencialmente` | `puede` |
 | `en cierta medida` | *(especificar o eliminar)* |
-| `sería posible que` | `puede que` / afirmar directamente si hay certeza |
+| `sería posible que` | `puede que` / afirmar directo si hay certeza |
 | `aparentemente` | *(eliminar si hay datos que lo respaldan)* |
 | `presumiblemente` | *(eliminar si hay evidencia)* |
 
 ---
 
-## Reglas de Estilo Profesional
+## 8. Reglas de Estilo Profesional
 
 ### Brevedad con precisión
 
 - Preferir oraciones de 15-25 palabras
 - Una idea por oración
-- Si una oración supera 30 palabras: dividirla
+- Si una oración supera 30 palabras, dividirla
 
 ### Terminología consistente
 
 - Usar siempre el mismo término para el mismo concepto (no alternar "gateway" con "pasarela" con "servidor")
-- En este proyecto: `gateway`, `servicio`, `agente`, `métrica`, `anomalía`, `reporte`
+- Términos canónicos del proyecto: `gateway`, `servicio`, `agente`, `métrica`, `anomalía`, `reporte`
 
-### Números y datos siempre al frente
+### Números y datos al frente
 
 - ❌ "Se observó una latencia elevada de aproximadamente 1200 milisegundos"
 - ✅ "Latencia: 1200ms — supera el umbral de 500ms"
@@ -122,27 +126,36 @@ Los agentes (Dynatrace, DataPower, Incident Responder, Daily Summary) generan te
 
 ---
 
-## Flujo de Aplicación
+## 9. Flujo de Aplicación
 
-Para textos **cortos** (< 200 palabras): aplicar correcciones directamente sin consultar.
+**Textos cortos (< 200 palabras):** aplicar correcciones directamente, sin lista previa.
 
-Para textos **largos** (> 200 palabras):
+**Textos largos (> 200 palabras):**
 
-1. Escanear el texto completo e identificar patrones presentes
+1. Escanear el texto e identificar patrones presentes
 2. Listar qué patrones se encontraron y cuántas instancias
 3. Aplicar todas las correcciones
 4. Mostrar el texto corregido
 
 ---
 
-## Alcance
+## 10. Alcance
 
-Este skill aplica a las salidas de:
+Aplica a las salidas de:
 
 - `@dyn-analyst` — análisis de métricas y anomalías
-- `@dp-analyst` — análisis de reportes
+- `@dp-analyst` — análisis de reportes DataPower
 - `@ops-incident-responder` — reportes de incidente
 - `@ops-daily-summary` — resúmenes diarios
 - `@dyn-dql-assistant` — explicaciones de queries
 
-**No aplica a:** queries DQL, código, JSON, tablas de datos crudos, o contenido dentro de bloques de código.
+**No aplica a:** queries DQL, código, JSON, tablas de datos crudos, ni a cualquier contenido dentro de bloques de código.
+
+---
+
+## 11. Referencias
+
+| Recurso | Propósito |
+| ------- | --------- |
+| [`core-output-polisher.agent.md`](../../agents/core/core-output-polisher.agent.md) | Rol del agente y triggers |
+| [`ops-metrics-thresholds/SKILL.md`](../ops-metrics-thresholds/SKILL.md) | Terminología técnica que NO debe ser modificada |

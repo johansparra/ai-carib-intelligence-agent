@@ -1,14 +1,14 @@
-# Incident Responder Skill
+# Incident Response — Skill
 
-Skill que implementa la lógica de correlación y generación de reportes para el agente `incident-responder`.
+Procedimiento técnico que sigue el agente [`ops-incident-responder`](../../agents/ops/ops-incident-responder.agent.md) para correlacionar anomalías, clasificar severidad y generar reportes de incidente.
 
 ---
 
-## Paso 1: Recopilación de Datos
+## Paso 1 — Recopilación de Datos
 
 ### Desde Dynatrace
 
-Ejecutar las siguientes queries DQL en orden:
+Ejecutar estas queries DQL en orden:
 
 ```dql
 -- 1a. Problemas activos relacionados al servicio
@@ -47,27 +47,25 @@ fetch spans
 Revisar el reporte DataPower del período afectado buscando:
 
 - Errores en el mismo `service` detectado en Dynatrace
-- Códigos de error que expliquen el síntoma
+- Códigos de error que expliquen el síntoma (ver [`dp-analysis/SKILL.md`](../dp-analysis/SKILL.md))
 - Variaciones en `response_time` y `queue_depth`
 
 ---
 
-## Paso 2: Correlación
-
-Determinar si el problema está en:
+## Paso 2 — Correlación
 
 | Escenario | Señales | Causa probable |
-| ----------- | --------- | ---------------- |
+| --------- | ------- | -------------- |
 | **Solo Dynatrace** | Anomalía en spans, DataPower OK | Problema en la aplicación o backend |
 | **Solo DataPower** | Errores en gateway, Dynatrace sin anomalía | Problema de conectividad o política |
 | **Ambos sistemas** | Anomalías simultáneas en el mismo servicio | Problema de infraestructura compartida |
-| **Ninguno** | Sin datos | Servicio no instrumentado o problema de monitoreo |
+| **Ninguno** | Sin datos correlacionables | Servicio no instrumentado o problema de monitoreo |
 
 ---
 
-## Paso 3: Clasificación de Severidad
+## Paso 3 — Clasificación de Severidad
 
-Usar los umbrales de `.github/skills/ops/ops-metrics-thresholds.md`:
+Aplicar los umbrales de [`ops-metrics-thresholds/SKILL.md`](../ops-metrics-thresholds/SKILL.md):
 
 ```log
 CRITICAL si:
@@ -86,32 +84,32 @@ INFO si:
 
 ---
 
-## Paso 4: Generación del Reporte
+## Paso 4 — Generación del Reporte
 
-Completar la **Plantilla 1: Reporte de Incidente** de `.github/skills/ops/ops-report-templates.md` con:
+Completar la **Plantilla 1: Reporte de Incidente** de [`ops-report-templates/SKILL.md`](../ops-report-templates/SKILL.md) con:
 
 - Datos recopilados en el Paso 1
 - Resultado de la correlación del Paso 2
 - Severidad clasificada en el Paso 3
-- Acciones de remediación específicas al patrón identificado
+- Acciones de remediación específicas al patrón identificado (Paso 5)
 
 ---
 
-## Paso 5: Acciones de Remediación por Patrón
+## Paso 5 — Acciones de Remediación por Patrón
 
-### Backend caído (0x00d30003 + latencia alta en Dynatrace)
+### Backend caído (`0x00d30003` + latencia alta en Dynatrace)
 
 1. Verificar estado del servidor backend
 2. Revisar logs del backend para causa raíz
 3. Activar failover si está configurado
 4. Escalar a equipo de infraestructura
 
-### Problema de certificados (0x00d30006)
+### Problema de certificados (`0x00d30006`)
 
 1. Verificar fecha de expiración del certificado afectado
 2. Si expiró: renovar y redeployar en DataPower
 3. Si no expiró: verificar chain de confianza y hostname
-4. Escalar a equipo de seguridad/PKI
+4. Escalar a equipo de seguridad / PKI
 
 ### Sobrecarga de tráfico (CPU alta + latencia gradual)
 
@@ -120,7 +118,7 @@ Completar la **Plantilla 1: Reporte de Incidente** de `.github/skills/ops/ops-re
 3. Implementar rate limiting temporal si es posible
 4. Escalar a equipo de arquitectura
 
-### Falla de política (0x80e00014)
+### Falla de política (`0x80e00014`)
 
 1. Revisar logs de DataPower para identificar qué regla rechazó
 2. Verificar si hubo cambio reciente en políticas
@@ -131,6 +129,18 @@ Completar la **Plantilla 1: Reporte de Incidente** de `.github/skills/ops/ops-re
 
 ## Integración con Otros Agentes
 
-- Datos de entrada vienen de `@dyn-analyst` y `@dp-analyst`
-- El reporte generado puede enviarse al chatbot orquestador para distribución
-- Si el incidente requiere cambios en Jira: pasar al agente `@atlassian-requirements-to-jira`
+- Entrada: datos provistos por [`@dyn-analyst`](../../agents/dyn/dyn-analyst.agent.md) y [`@dp-analyst`](../../agents/dp/dp-analyst.agent.md)
+- Salida final: pasar por [`@output-polisher`](../../agents/core/core-output-polisher.agent.md) antes de entregar al usuario
+- Si el incidente requiere abrir tickets: derivar a [`@atlassian-requirements-to-jira`](../../agents/core/core-atlassian-jira.agent.md)
+
+---
+
+## Referencias
+
+| Recurso | Propósito |
+| ------- | --------- |
+| [`ops-incident-responder.agent.md`](../../agents/ops/ops-incident-responder.agent.md) | Rol del agente y triggers |
+| [`dyn-queries/SKILL.md`](../dyn-queries/SKILL.md) | Biblioteca DQL completa |
+| [`dp-analysis/SKILL.md`](../dp-analysis/SKILL.md) | Códigos de error y patrones DataPower |
+| [`ops-metrics-thresholds/SKILL.md`](../ops-metrics-thresholds/SKILL.md) | Umbrales SLO/SLA y glosario |
+| [`ops-report-templates/SKILL.md`](../ops-report-templates/SKILL.md) | Plantillas de reportes |

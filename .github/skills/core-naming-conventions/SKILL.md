@@ -1,166 +1,119 @@
-# Naming Conventions
+---
+name: core-naming-conventions
+description: >
+  Guía de decisión para nombrar componentes (agentes, skills, prompts,
+  instructions). Complementa core-naming-conventions.instructions.md
+  con criterios para decidir cuándo crear un agente vs skill vs instruction.
+---
 
-Convenciones de nombres y estructura para todos los archivos del proyecto.
+# Naming Conventions — Skill
+
+Esta skill da **criterios de decisión** para nombrar y crear componentes nuevos. Las **reglas de formato** ya están en [`core-naming-conventions.instructions.md`](../../instructions/core-naming-conventions.instructions.md) (auto-inyectadas a todos los archivos).
 
 ---
 
-## Sistema de Prefijos
+## 1. Sistema de Prefijos
 
-Todos los agentes, skills y prompts llevan un prefijo que indica su dominio:
+Todo agente, skill o prompt lleva un prefijo de dominio:
 
 | Prefijo | Dominio | Cuándo usarlo |
-| -------- | ------- | ------------- |
-| `dyn-` | Dynatrace | Específico de Dynatrace, DQL o Davis AI |
-| `dp-` | DataPower | Específico de DataPower o gateway |
-| `ops-` | Operaciones | Usa ambos dominios (incidentes, resúmenes) |
-| `core-` | Infraestructura | Transversal al proyecto, sin dominio específico |
+| ------- | ------- | ------------- |
+| `dyn-` | Dynatrace | DQL, Davis AI, métricas, anomalías |
+| `dp-` | DataPower | Gateway, dominios, políticas, reportes |
+| `ops-` | Operaciones (cross-domain) | Usa ambos dominios (incidentes, resúmenes diarios) |
+| `core-` | Infraestructura | Transversal al proyecto, sin dominio operativo |
 
-**Ejemplos correctos:**
-
-```text
-agents/dyn/dyn-analyst.agent.md          skills/dyn-queries/SKILL.md          prompts/dyn/dyn-chatbot.prompt.md
-agents/dp/dp-analyst.agent.md            skills/dp-analysis/SKILL.md          prompts/dp/dp-analyst.prompt.md
-agents/ops/ops-incident-responder.agent.md  skills/ops-incident/SKILL.md
-agents/core/core-structure-monitor.agent.md  skills/core-output-polisher/SKILL.md
-agents/core/core-ai-team-dev.agent.md
-```
+**Si dudas entre dos prefijos:** elige el dominio donde vive la responsabilidad principal. Si la responsabilidad está repartida, es `ops-`.
 
 ---
 
-## Nombres de Archivos
+## 2. Cuándo crear un Agente vs Skill vs Instruction
 
-| Tipo de archivo | Convención | Ejemplo |
-| ---------------- | ------------ | --------- |
-| Agente | `agents/{dom}/{prefijo}-{nombre}.agent.md` | `agents/dyn/dyn-analyst.agent.md` |
-| Prompt | `prompts/{dom}/{prefijo}-{nombre}.prompt.md` | `prompts/dyn/dyn-chatbot.prompt.md` |
-| Skill | `skills/{prefijo}-{nombre}/SKILL.md` | `skills/dyn-queries/SKILL.md` |
-| Instrucción | `instructions/{prefijo}-{nombre}.instructions.md` | `instructions/core-naming-conventions.instructions.md` |
-
-Todos los nombres de archivos y carpetas usan `kebab-case` (minúsculas con guiones).
-
----
-
-## Estructura de Carpetas
-
-### Cuándo crear un nuevo Agente (`.github/agents/`)
-
-Crear un nuevo agente cuando:
+### Crear un Agente nuevo cuando:
 
 - Tiene un **rol claramente diferenciado** (no es variación de uno existente)
 - Necesita instrucciones de comportamiento propias
-- Puede ser activado de forma independiente por el usuario
-- Tiene un conjunto de skills o herramientas específicas
+- Puede ser activado de forma independiente por el usuario (`@nombre-agente`)
+- Tiene un conjunto de skills específicas a las que recurre
 
-Estructura mínima del agente:
+### Crear un Skill nuevo cuando:
 
-```bash
-agents/{nombre-agente}/
-└── README.md   ← descripción, propósito, input/output, cómo activar
-```
+- Contiene **conocimiento técnico específico** (queries, patrones, configuración, plantillas)
+- Es **reutilizable por más de un agente**
+- No es lógica de comportamiento — eso va en el agente
+- No son reglas siempre-activas — eso va en `instructions/`
 
-### Cuándo crear un nuevo Skill (`.github/skills/`)
-
-Crear un nuevo skill cuando:
-
-- Contiene **conocimiento técnico específico** (queries, patrones, configuración)
-- Es reutilizable por más de un agente
-- No es lógica de comportamiento (eso va en el agente)
-
-Estructura mínima del skill:
-
-```bash
-skills/{nombre-skill}/
-└── README.md   ← configuración, ejemplos, referencia técnica
-```
-
-### Cuándo usar `instructions/` (`.github/instructions/`)
-
-Crear una instrucción cuando:
+### Crear una Instruction nueva cuando:
 
 - Contiene **reglas que deben estar siempre activas** (sin activación manual)
 - Aplica a todos los archivos (`applyTo: "**"`) o a un tipo específico (`applyTo: "**/*.md"`)
-- Es más corta y directa que un skill — reglas, no conocimiento técnico
-
-Estructura de un archivo instructions:
-
-```markdown
----
-applyTo: "**"
----
-
-# Título de la instrucción
-
-Reglas o convenciones...
-```
+- Es más corta y directa que un skill — son **reglas**, no conocimiento técnico
+- El contenido vale como "guardrail" automático, no como referencia consultada
 
 ---
 
-## Convenciones de Commits
+## 3. Estructura por Tipo de Archivo
 
-### Para cambios en documentación (automáticos vía Structure Monitor)
+| Tipo | Ruta | Frontmatter |
+| ---- | ---- | ----------- |
+| Agente | `agents/{dom}/{prefijo}-{nombre}.agent.md` | `name`, `description`, `tools` |
+| Prompt | `prompts/{dom}/{prefijo}-{nombre}.prompt.md` | `name`, `description` |
+| Skill | `skills/{prefijo}-{nombre}/SKILL.md` | `name`, `description` |
+| Instrucción | `instructions/{prefijo}-{nombre}.instructions.md` | `applyTo` |
 
-```bash
-docs: sync README.md diagrams
-docs: add new agent {nombre}
-docs: fix markdown formatting
-```
+Todos los nombres usan `kebab-case` (minúsculas con guiones). Para detalles de formato Markdown, ver [`core-markdown-style.instructions.md`](../../instructions/core-markdown-style.instructions.md).
 
-### Para nuevas funcionalidades
+---
 
-```bash
-feat: add {nombre-agente} agent
-feat: add {nombre-skill} skill
-feat: add {nombre} instruction
-```
+## 4. Ejemplos Canónicos
 
-### Para cambios en prompts
+```text
+agents/dyn/dyn-analyst.agent.md
+agents/dp/dp-analyst.agent.md
+agents/ops/ops-incident-responder.agent.md
+agents/core/core-structure-monitor.agent.md
 
-```bash
-feat: implement {nombre} prompt
-refactor: update {nombre} prompt instructions
-```
+skills/dyn-queries/SKILL.md
+skills/dp-analysis/SKILL.md
+skills/ops-incident/SKILL.md
+skills/core-output-polisher/SKILL.md
 
-### Para correcciones
+prompts/dyn/dyn-chatbot.prompt.md
+prompts/dp/dp-analyst.prompt.md
 
-```bash
-fix: {descripción del problema corregido}
-```
-
-### Commits atómicos — una responsabilidad por commit
-
-```bash
-✅ feat: add incident-responder agent
-✅ feat: add incident-responder skill
-❌ feat: add incident-responder agent and skill and update readme  ← demasiado
+instructions/core-naming-conventions.instructions.md
+instructions/core-markdown-style.instructions.md
 ```
 
 ---
 
-## Reglas de Formato Markdown
+## 5. Casos Frecuentes de Decisión
 
-Aplicadas automáticamente por el agente Structure Monitor:
-
-1. **Línea en blanco después de encabezados** `##` y `###`
-2. **Listas después de `:` deben estar rodeadas de líneas en blanco** (MD032)
-3. **Una sola línea en blanco entre secciones** (no dos o más)
-4. **Tablas con encabezado y separador** en cada columna
-5. **Separadores de tabla con espacios** — siempre dejar espacio después de cada `|` en la fila separadora:
-   - ❌ `|----------|----------------|`
-   - ✅ `| ---------- | ---------------- |`
-6. **Bloques de código con lenguaje obligatorio** — nunca dejar el bloque vacío:
-   - ❌ ` ``` `
-   - ✅ ` ```bash `, ` ```markdown `, ` ```json `, ` ```dql `, ` ```http `, ` ```log `, ` ```text `
+| Caso | Resolución |
+| ---- | ---------- |
+| "Voy a agregar una nueva query DQL" | Va en `skills/dyn-queries/SKILL.md`, no es un agente nuevo |
+| "Necesito una regla de formato Markdown" | Va en `instructions/`, no en un skill |
+| "Necesito un análisis especializado de un nuevo tipo de reporte" | Si tiene flujo propio, es un agente nuevo + su skill |
+| "Quiero una plantilla de reporte" | Va en `skills/ops-report-templates/SKILL.md` (cross-domain) |
+| "Quiero recordar al equipo cómo hacer un commit" | Va en `instructions/core-naming-conventions.instructions.md` |
 
 ---
 
-## Sección TODO
+## 6. Antes de Crear
 
-Marcar integraciones pendientes con:
+Antes de crear un componente nuevo, pregúntate:
 
-```markdown
-<!-- TODO: reemplazar con valor real -->
-<!-- TODO: configurar cuando se tenga acceso a la API -->
-<!-- TODO: completar con equipo y canal real -->
-```
+1. ¿**Existe ya** un agente o skill que cubre esta responsabilidad? Si sí, extiéndelo en lugar de duplicar.
+2. ¿Es **cross-domain**? Si sí, usa `ops-` o `core-`, nunca `dyn-`/`dp-`.
+3. ¿Quién lo **invoca**? Si es invocable por el usuario → agente. Si es consultado por otros agentes → skill. Si debe estar siempre activo → instruction.
+4. ¿Hay **tests / cambios funcionales**? Si sí, recuerda: cambios atómicos, un commit = una responsabilidad.
 
-Esto permite buscar rápidamente todos los puntos de integración pendientes con: `grep -r "TODO" .github/`
+---
+
+## 7. Referencias
+
+| Recurso | Propósito |
+| ------- | --------- |
+| [`core-naming-conventions.instructions.md`](../../instructions/core-naming-conventions.instructions.md) | Reglas auto-inyectadas (prefijos, commits) |
+| [`core-markdown-style.instructions.md`](../../instructions/core-markdown-style.instructions.md) | Reglas de formato Markdown |
+| [`core-structure-monitor.agent.md`](../../agents/core/core-structure-monitor.agent.md) | Agente que detecta cambios estructurales y mantiene docs sincronizados |

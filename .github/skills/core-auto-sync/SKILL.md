@@ -1,105 +1,58 @@
-# Auto-Sync Configuration
+# Auto-Sync — Configuración de Triggers
 
-Configuración para que el agente Structure Monitor se ejecute automáticamente después de cada cambio.
+Define **qué rutas y qué tipos de cambio** disparan automáticamente al agente [`structure-monitor`](../../agents/core/core-structure-monitor.agent.md).
 
-## Activación Automática
+> Este skill es **solo configuración**. La lógica de detección y actualización vive en [`core-structure-monitor/SKILL.md`](../core-structure-monitor/SKILL.md). Las reglas de formato Markdown viven en [`core-markdown-style.instructions.md`](../../instructions/core-markdown-style.instructions.md).
 
-Este agente se ejecuta automáticamente cuando:
+---
 
-1. **Después de crear/modificar archivos en:**
-   - `.github/agents/`
-   - `.github/skills/`
-   - `.github/prompts/`
-   - `.github/instructions/`
+## Rutas Vigiladas
 
-2. **Cambios en estructura de carpetas**
-   - Nueva carpeta creada
-   - Carpeta eliminada
-   - Estructura reorganizada
-
-3. **Cambios en lógica**
-   - Archivos de configuración modificados
-   - README.md de componentes actualizados
-
-## Instrucciones para Copilot
-
-Cuando realices cambios en cualquier parte del proyecto:
+El agente se activa automáticamente cuando hay cambios en cualquiera de estas rutas:
 
 ```text
-Ejecutar: /structure-monitor-sync
+.github/agents/**
+.github/skills/**
+.github/prompts/**
+.github/instructions/**
+.github/copilot-instructions.md
+README.md
 ```
 
-O simplemente di:
+---
+
+## Eventos que Disparan Activación
+
+| Evento | Activa | Notas |
+| ------ | ------ | ----- |
+| Carpeta creada | Sí | Verificar si requiere `README.md` base |
+| Carpeta eliminada | Sí | Limpiar referencias en READMEs e índices |
+| Carpeta renombrada | Sí | Actualizar todas las referencias |
+| Archivo `.agent.md` agregado/eliminado | Sí | Regenerar inventario de agentes |
+| Archivo `.prompt.md` agregado/eliminado | Sí | Regenerar inventario de prompts |
+| Archivo `SKILL.md` agregado/eliminado | Sí | Regenerar inventario de skills |
+| Archivo `.instructions.md` agregado/eliminado | Sí | Regenerar inventario de instrucciones |
+| Cambio en `description` de frontmatter | Sí | Refrescar tabla del README correspondiente |
+| Cambio en cuerpo (sin tocar rol/relaciones) | No | No es cambio estructural |
+| Cambio de formato Markdown puro | No | Se aplica vía `core-markdown-style.instructions.md` |
+
+---
+
+## Activación Manual
+
+Cuando el usuario quiera forzar una pasada sin haber hecho cambios:
 
 ```text
 "Sincroniza la documentación con los cambios actuales"
+/structure-monitor-sync
 ```
 
-El agente automáticamente:
+Ver la plantilla completa en [`core-structure-monitor.prompt.md`](../../prompts/core/core-structure-monitor.prompt.md).
 
-- Detectará los cambios
-- Actualizará todos los README.md necesarios
-- Corregirá automáticamente el formato Markdown en archivos `.md`, incluyendo saltos de línea después de encabezados y alrededor de listas tras `:`
-- Regenerará los diagramas Mermaid
-- Gestionará commits Git automáticos
-- Validará la consistencia
-- Confirmará los cambios completados
+---
 
-## Cambios Detectables
+## Política
 
-### Carpetas
-
-- ✓ Nueva carpeta en agents/
-- ✓ Nueva carpeta en skills/
-- ✓ Nueva carpeta en prompts/
-- ✓ Renombrado de carpetas
-- ✓ Eliminación de carpetas
-
-### Archivos
-
-- ✓ Nuevo archivo .md
-- ✓ Nuevo archivo .prompt.md
-- ✓ Nuevo archivo .yml/.yaml
-- ✓ Eliminación de archivos
-- ✓ Renombrado de archivos
-- ✓ Corrección automática de formato Markdown en archivos `.md` (encabezados con línea en blanco)
-- ✓ Corrección automática de listas tras `:` para evitar MD032 (listas deben estar rodeadas por líneas en blanco)
-
-### Contenido
-
-- ✓ Cambios en descripción de componentes
-- ✓ Cambios en lógica de agentes
-- ✓ Cambios en flujo de procesamiento
-
-## Notas
-
-- El agente **no requiere activación manual** después de cambios
-- Los README.md se mantendrán siempre sincronizados
-- Los diagramas Mermaid se regenerarán automáticamente
-- Se aplicará corrección automática de formato Markdown en archivos `.md`, especialmente encabezados `##` y `###`
-- Se aplicará corrección automática de listas tras `:` para evitar MD032
-- Se gestionarán commits Git automáticos después de cambios
-- La documentación reflejará la estructura actual del proyecto
-
-## Gestión Automática de Git
-
-### Commits Automáticos
-
-Después de cada cambio en la documentación, el agente crea automáticamente:
-
-- `git add .` - agrega todos los archivos modificados
-- `git commit -m "mensaje descriptivo"` - commit con mensaje siguiendo convenciones
-- `git push origin main` - sube cambios a rama principal
-
-### Convenciones de Mensajes
-
-- `docs: sync README.md diagrams` - actualizaciones de diagramas
-- `docs: add new agent structure-monitor` - nuevas carpetas/agentes
-- `docs: fix markdown formatting` - correcciones de formato
-- `feat: add gh-cli skill` - nuevas funcionalidades
-
-### Integración con GitHub CLI
-
-- Crea PRs automáticamente cuando sea necesario
-- Maneja merges de documentación
-- Mantiene sincronización con repositorio remoto
+- El agente **no requiere activación manual** tras cambios — el trigger automático debe bastar
+- Si la documentación ya está sincronizada, el agente reporta No-Op y no toca archivos
+- Las correcciones de formato Markdown se aplican como efecto secundario al actualizar un README, no como objetivo principal

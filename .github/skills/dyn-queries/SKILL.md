@@ -1,10 +1,18 @@
-# Dynatrace Skill
+---
+name: dyn-queries
+description: >
+  Biblioteca de queries DQL (Dynatrace Query Language) reutilizables,
+  configuración de conexión a la API de Dynatrace, sintaxis básica y
+  patrones de construcción. Consumida por @dyn-analyst y @dyn-dql-assistant.
+---
 
-Skills que definen las capacidades del agente Dynatrace: conexión a la API, consultas DQL y detección de anomalías.
+# Dynatrace Queries — Skill
+
+Conocimiento técnico que usan los agentes [`dyn-analyst`](../../agents/dyn/dyn-analyst.agent.md) y [`dyn-dql-assistant`](../../agents/dyn/dyn-dql-assistant.agent.md): conexión a la API, biblioteca de queries DQL y guía de construcción.
 
 ---
 
-## Configuración de Conexión
+## 1. Configuración de Conexión
 
 <!-- TODO: reemplazar con valores reales al momento de integración -->
 
@@ -21,13 +29,11 @@ BASE_URL=https://{ENVIRONMENT_ID}.live.dynatrace.com/api/v2
 - `problems.read` — leer problemas y anomalías detectadas por Davis AI
 - `entities.read` — leer entidades monitoreadas (servicios, hosts, procesos)
 
-**Dónde encontrar el Environment ID:**
-
-En la URL de Dynatrace: `https://{ENVIRONMENT_ID}.live.dynatrace.com`
+**Dónde encontrar el Environment ID:** en la URL de Dynatrace: `https://{ENVIRONMENT_ID}.live.dynatrace.com`
 
 ---
 
-## API REST — Endpoints principales
+## 2. Endpoints REST Principales
 
 ```http
 # Ejecutar query DQL
@@ -43,7 +49,7 @@ POST {BASE_URL}/logs/search
 GET  {BASE_URL}/entities?entitySelector=type(SERVICE)
 ```
 
-**Headers requeridos en cada request:**
+**Headers requeridos:**
 
 ```http
 Authorization: Api-Token {API_TOKEN}
@@ -52,7 +58,7 @@ Content-Type: application/json
 
 ---
 
-## Biblioteca de Queries DQL
+## 3. Biblioteca de Queries DQL
 
 ### Errores HTTP 5xx por servicio (última hora)
 
@@ -158,7 +164,7 @@ fetch metrics
 
 ---
 
-## Cómo Construir Queries DQL
+## 4. Cómo Construir Queries DQL
 
 ### Estructura básica
 
@@ -179,6 +185,18 @@ fetch {fuente}           -- spans | logs | metrics | problems | events
 | filter timestamp > now() - 7d    -- última semana
 ```
 
+### Operadores de filtro
+
+```dql
+| filter campo == "valor"          -- igualdad exacta
+| filter campo != "valor"          -- diferente
+| filter campo >= número           -- mayor o igual
+| filter campo contains "texto"    -- contiene (substring)
+| filter campo matches "regex"     -- expresión regular
+| filter condicion1 AND condicion2 -- AND lógico
+| filter condicion1 OR condicion2  -- OR lógico
+```
+
 ### Agregaciones comunes
 
 ```dql
@@ -191,7 +209,7 @@ countIf(condición)           -- contar condicionalmente
 
 ---
 
-## Ejemplo de Respuesta JSON (API)
+## 5. Ejemplo de Respuesta JSON (API)
 
 ```json
 {
@@ -213,10 +231,21 @@ El agente extrae `dimensionMap` para identificar el servicio y `values` para las
 
 ---
 
-## Integración Futura
+## 6. Integración Futura
 
 Cuando se conecte la API real:
 
 1. Reemplazar `ENVIRONMENT_ID` y `API_TOKEN` en la configuración
 2. Validar scopes con: `GET {BASE_URL}/entities?entitySelector=type(SERVICE)&pageSize=5`
-3. Si el entorno es **Dynatrace Managed** (on-premise), el BASE_URL es: `https://{servidor}/e/{ENVIRONMENT_ID}/api/v2`
+3. Si el entorno es **Dynatrace Managed** (on-premise), el `BASE_URL` es: `https://{servidor}/e/{ENVIRONMENT_ID}/api/v2`
+
+---
+
+## 7. Referencias
+
+| Recurso | Propósito |
+| ------- | --------- |
+| [`dyn-analyst.agent.md`](../../agents/dyn/dyn-analyst.agent.md) | Agente Dynatrace principal que usa esta biblioteca |
+| [`dyn-dql-assistant.agent.md`](../../agents/dyn/dyn-dql-assistant.agent.md) | Especialista en construcción y validación de queries |
+| [`ops-metrics-thresholds/SKILL.md`](../ops-metrics-thresholds/SKILL.md) | Umbrales para interpretar los resultados |
+| [Documentación oficial DQL](https://docs.dynatrace.com/docs/platform/grail/dynatrace-query-language) | Referencia externa de Dynatrace |

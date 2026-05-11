@@ -1,10 +1,18 @@
-# DataPower Skill
+---
+name: dp-analysis
+description: >
+  Conocimiento técnico para analizar reportes de IBM DataPower Gateway:
+  estructura de reporte, métricas clave, códigos de error, patrones de
+  análisis y plantilla de insight profesional. Consumido por @dp-analyst.
+---
 
-Skills que definen el análisis profesional de reportes DataPower. Este componente es completamente independiente de Dynatrace.
+# DataPower Analysis — Skill
+
+Conocimiento técnico que usa el agente [`dp-analyst`](../../agents/dp/dp-analyst.agent.md) para analizar reportes del gateway DataPower. Este skill es **independiente** del dominio Dynatrace.
 
 ---
 
-## Configuración de Conexión (Integración Futura)
+## 1. Configuración de Conexión (Integración Futura)
 
 <!-- TODO: reemplazar con valores reales al momento de integración -->
 
@@ -20,18 +28,18 @@ BASE_URL=https://{DP_HOST}:{DP_PORT}/mgmt/status/{DP_DOMAIN}
 **Endpoints REST Management Interface:**
 
 ```http
-GET {BASE_URL}/HTTPTransactions     -- transacciones HTTP
-GET {BASE_URL}/LogTargetSummary     -- estado de logs
-GET {BASE_URL}/ServicesStatus       -- estado de servicios
-GET {BASE_URL}/WSOperations         -- operaciones WebService
-GET {BASE_URL}/MessageFlows         -- flujos de mensajes activos
+GET {BASE_URL}/HTTPTransactions     # transacciones HTTP
+GET {BASE_URL}/LogTargetSummary     # estado de logs
+GET {BASE_URL}/ServicesStatus       # estado de servicios
+GET {BASE_URL}/WSOperations         # operaciones WebService
+GET {BASE_URL}/MessageFlows         # flujos de mensajes activos
 ```
 
 ---
 
-## Estructura de un Reporte DataPower
+## 2. Estructura de un Reporte DataPower
 
-Un reporte típico contiene los siguientes campos:
+Un reporte típico contiene:
 
 ```http
 timestamp       : 2025-05-09T14:32:00Z
@@ -52,10 +60,10 @@ method          : POST
 
 ---
 
-## Métricas Clave a Analizar
+## 3. Métricas Clave
 
-| Métrica | Descripción | Umbral WARNING | Umbral CRITICAL |
-| -------- | ------------- | ---------------- | ----------------- |
+| Métrica | Descripción | WARNING | CRITICAL |
+| ------- | ----------- | ------- | -------- |
 | `response_time` | Tiempo de respuesta end-to-end | > 800ms | > 2000ms |
 | `error_rate` | % de transacciones con error | > 1% | > 5% |
 | `throughput` | Transacciones por segundo (TPS) | Caída > 20% | Caída > 50% |
@@ -63,22 +71,24 @@ method          : POST
 | `cpu_usage` | CPU del gateway | > 70% | > 90% |
 | `memory_usage` | Memoria del gateway | > 75% | > 90% |
 
+Umbrales canónicos en [`ops-metrics-thresholds/SKILL.md`](../ops-metrics-thresholds/SKILL.md).
+
 ---
 
-## Códigos de Error Comunes
+## 4. Códigos de Error Comunes
 
 | Código | Descripción | Causa probable |
-| -------- | ------------- | --------------- |
+| ------ | ----------- | -------------- |
+| `0x00d30001` | Connection refused | Puerto cerrado o firewall |
 | `0x00d30003` | Backend connection timeout | Backend caído o lento |
 | `0x00d30006` | SSL handshake failure | Certificado expirado o no válido |
 | `0x00d3000b` | Service unavailable | Servicio de backend no disponible |
 | `0x00d10011` | Parse error | Mensaje malformado o schema inválido |
 | `0x80e00014` | Transaction rejected | Regla de política bloqueó la transacción |
-| `0x00d30001` | Connection refused | Puerto cerrado o firewall |
 
 ---
 
-## Patrones de Análisis
+## 5. Patrones de Análisis
 
 ### Cuello de botella en backend
 
@@ -122,9 +132,9 @@ method          : POST
 
 ---
 
-## Plantilla de Insight Profesional
+## 6. Plantilla de Insight Profesional
 
-Para cada análisis, el agente DataPower produce esta estructura:
+Para cada análisis, el agente produce esta estructura (usar la **Plantilla 1: Reporte de Incidente** o la **Plantilla 4: Alerta de Anomalía** de [`ops-report-templates/SKILL.md`](../ops-report-templates/SKILL.md) según severidad):
 
 ```markdown
 ## Análisis DataPower — {servicio} — {fecha}
@@ -148,14 +158,14 @@ Para cada análisis, el agente DataPower produce esta estructura:
 3. {Acción preventiva}
 
 ### Escalamiento
-{Si CRITICAL: escalar a [equipo] via [canal]}
+{Si CRITICAL: escalar a [equipo] vía [canal]}
 {Si WARNING: monitorear durante {tiempo}}
 {Si INFO: registrar para tendencias}
 ```
 
 ---
 
-## Ejemplo: Reporte de Entrada y Análisis de Salida
+## 7. Ejemplo: Reporte de Entrada y Análisis de Salida
 
 **Reporte de entrada:**
 
@@ -197,11 +207,22 @@ CRITICAL: Escalar a equipo de Plataforma y equipo de Pagos inmediatamente.
 
 ---
 
-## Integración Futura
+## 8. Integración Futura
 
 Cuando se conecte la API real:
 
-1. Reemplazar variables de configuración arriba
+1. Reemplazar variables de configuración (sección 1)
 2. Validar acceso con: `GET {BASE_URL}/ServicesStatus`
 3. Configurar polling de métricas cada 60 segundos
-4. Integrar con `@ops-incident-responder` para correlación automática con Dynatrace
+4. Integrar con [`@ops-incident-responder`](../../agents/ops/ops-incident-responder.agent.md) para correlación automática con Dynatrace
+
+---
+
+## 9. Referencias
+
+| Recurso | Propósito |
+| ------- | --------- |
+| [`dp-analyst.agent.md`](../../agents/dp/dp-analyst.agent.md) | Agente DataPower principal que usa este skill |
+| [`ops-metrics-thresholds/SKILL.md`](../ops-metrics-thresholds/SKILL.md) | Umbrales canónicos y glosario completo |
+| [`ops-report-templates/SKILL.md`](../ops-report-templates/SKILL.md) | Plantillas de reportes (incidente, alerta) |
+| [`ops-incident/SKILL.md`](../ops-incident/SKILL.md) | Procedimiento de correlación cuando hay incidente |
