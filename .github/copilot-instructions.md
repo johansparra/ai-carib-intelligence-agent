@@ -123,7 +123,7 @@ Usa para:
 **Mantén Dynatrace y DataPower completamente independientes.**
 - Cambios en DataPower NO deben afectar a Dynatrace
 - Cada agente tiene sus propios skills y prompts
-- Si necesitas compartir lógica, usa `toolboxes/`
+- Si necesitas compartir lógica, usa un skill con prefijo `ops-` (por ejemplo `skills/ops-incident/`, `skills/ops-report-templates/`)
 
 ### Regla #2: Actualización Automática de Documentación
 
@@ -196,8 +196,8 @@ Copilot: "¿Qué cambios se han hecho en la estructura?"
 ## Próximos Pasos
 
 - [ ] Implementar conexión con Davis IA de Dynatrace
-- [ ] Crear scripts de DQL queries en `skills/dyn/dyn-queries/`
-- [ ] Desarrollar lógica de análisis en `skills/dp/dp-analysis/`
+- [ ] Crear scripts de DQL queries en `skills/dyn-queries/`
+- [ ] Desarrollar lógica de análisis en `skills/dp-analysis/`
 - [ ] Implementar orquestación en Chatbot principal
 - [ ] Crear tests para cada componente
 

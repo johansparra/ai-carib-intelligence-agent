@@ -10,9 +10,9 @@ This repository is a **GitHub Copilot agent configuration platform** for intelli
 
 The repo defines three operational agents orchestrated through GitHub Copilot:
 
-- **Dynatrace Agent** (`.github/agents/dyn/dyn-analyst/`) — Connects to Dynatrace Davis AI, runs DQL queries, detects anomalies. Uses skills in `.github/skills/dyn/dyn-queries/`.
-- **DataPower Agent** (`.github/agents/dp/dp-analyst/`) — Analyzes DataPower reports and generates professional insights. Uses skills in `.github/skills/dp/dp-analysis/`. Operates independently with no dependencies on Dynatrace.
-- **Structure Monitor** (`.github/agents/core/core-structure-monitor/`) — Automatically detects structural changes in the project and keeps all README.md files and Mermaid diagrams in sync. Configured via `.github/skills/core/core-auto-sync.md`. Also manages automatic Git commits and pushes.
+- **Dynatrace Agent** (`.github/agents/dyn/dyn-analyst.agent.md`) — Connects to Dynatrace Davis AI, runs DQL queries, detects anomalies. Uses skill `.github/skills/dyn-queries/SKILL.md`.
+- **DataPower Agent** (`.github/agents/dp/dp-analyst.agent.md`) — Analyzes DataPower reports and generates professional insights. Uses skill `.github/skills/dp-analysis/SKILL.md`. Operates independently with no dependencies on Dynatrace.
+- **Structure Monitor** (`.github/agents/core/core-structure-monitor.agent.md`) — Automatically detects structural changes in the project and keeps all README.md files and Mermaid diagrams in sync. Configured via `.github/skills/core-auto-sync/SKILL.md`. Logic in `.github/skills/core-structure-monitor/SKILL.md`.
 
 Two additional agents are present:
 - **ai-team-dev** (`.github/agents/core/core-ai-team-dev.agent.md`) — A three-role dev team (Nova/Frontend, Sage/Backend, Milo/Visual) for feature implementation. Reads `PROJECT_BRIEF.md` before starting and writes progress to `docs/sprint-N/progress.md`.
@@ -23,7 +23,7 @@ The Chatbot Copilot acts as the central orchestrator: receives user requests, ac
 ## Key Rules (from copilot-instructions.md)
 
 ### Component Separation
-Dynatrace and DataPower must remain fully independent. Changes to one must not affect the other. Shared logic belongs in `.github/skills/ops/`.
+Dynatrace and DataPower must remain fully independent. Changes to one must not affect the other. Shared logic belongs in skills with the `ops-` prefix (e.g., `.github/skills/ops-incident/`, `.github/skills/ops-report-templates/`, `.github/skills/ops-metrics-thresholds/`).
 
 ### Documentation via Structure Monitor
 **Do not manually edit Mermaid diagrams in any README.md.** The Structure Monitor agent handles all diagram regeneration automatically when files or folders change. To trigger it manually, say: *"Sincroniza la documentación con los cambios actuales"* or run `/structure-monitor-sync` in Copilot.

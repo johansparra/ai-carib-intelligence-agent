@@ -30,11 +30,11 @@ Esta carpeta contiene la estructura de agentes, skills, prompts e instrucciones 
 
 ## Flujo de Output con Output Polisher
 
-Todos los agentes pasan su salida por `@core-output-polisher` antes de entregarla al usuario:
+Todos los agentes pasan su salida por `@output-polisher` antes de entregarla al usuario:
 
 ```mermaid
 graph LR
-    A["@dyn-analyst"] --> OP["@core-output-polisher"]
+    A["@dyn-analyst"] --> OP["@output-polisher"]
     B["@dp-analyst"] --> OP
     C["@ops-incident-responder"] --> OP
     D["@ops-daily-summary"] --> OP
