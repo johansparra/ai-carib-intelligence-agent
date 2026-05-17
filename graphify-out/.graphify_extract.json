@@ -1,0 +1,354 @@
+{
+  "nodes": [
+    {
+      "id": "claude_settings_local_json",
+      "label": "settings.local.json",
+      "file_type": "code",
+      "source_file": ".claude\\settings.local.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_settings_local_permissions",
+      "label": "permissions",
+      "file_type": "code",
+      "source_file": ".claude\\settings.local.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "claude_settings_local_permissions_allow",
+      "label": "allow",
+      "file_type": "code",
+      "source_file": ".claude\\settings.local.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "vscode_settings_json",
+      "label": "settings.json",
+      "file_type": "code",
+      "source_file": ".vscode\\settings.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "vscode_settings_chat_tools_terminal_autoapprove",
+      "label": "chat.tools.terminal.autoApprove",
+      "file_type": "code",
+      "source_file": ".vscode\\settings.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "vscode_settings_chat_tools_terminal_autoapprove_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues",
+      "label": "/^cd /d d:\\\\\\\\Claude\\\\\\\\Copilot\\\\\\\\ai-carib-intelligence-agent; python -c 'import re, pathlib; root=pathlib\\\\.Path\\\\(\\\"\\\\.\\\"\\\\)\\\\.resolve\\\\(\\\\); files=sorted\\\\(root\\\\.glob\\\\(\\\"\\\\*\\\\*/\\\\*\\\\.md\\\"\\\\)\\\\); found=False; \\nfor p in files:\\n    text=p\\\\.read_text\\\\(encoding=\\\"utf-8\\\"\\\\)\\n    lines=text\\\\.splitlines\\\\(\\\\)\\n    bad=\\\\[\\\\]\\n    for i,line in enumerate\\\\(lines\\\\):\\n        if re\\\\.match\\\\(r\\\"\\\\^\\\\(#\\\\{1,6\\\\}\\\\)\\\\\\\\s\\\\+\\\\[\\\\^#\\\\]\\\\.\\\\*\\\\$\\\", line\\\\):\\n            if i\\\\+1 < len\\\\(lines\\\\) and lines\\\\[i\\\\+1\\\\]\\\\.strip\\\\(\\\\) != \\\"\\\":\\n                bad\\\\.append\\\\(\\\\(i\\\\+1,line\\\\)\\\\)\\n    if bad:\\n        found=True\\n        print\\\\(p\\\\)\\n        for lineno,line in bad:\\n            print\\\\(f\\\"  \\\\{lineno\\\\}: \\\\{line\\\\}\\\"\\\\)\\nif not found:\\n    print\\\\(\\\"no-issues\\\"\\\\)'$/",
+      "file_type": "code",
+      "source_file": ".vscode\\settings.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "vscode_settings_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues_approve",
+      "label": "approve",
+      "file_type": "code",
+      "source_file": ".vscode\\settings.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "vscode_settings_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues_matchcommandline",
+      "label": "matchCommandLine",
+      "file_type": "code",
+      "source_file": ".vscode\\settings.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.claude\\settings.local.json",
+      "label": "settings.local.json",
+      "file_type": "code"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.vscode\\settings.json",
+      "label": "settings.json",
+      "file_type": "code"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\CLAUDE.md",
+      "label": "CLAUDE.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\Comandos.md",
+      "label": "Comandos.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\README.md",
+      "label": "README.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\copilot-instructions.md",
+      "label": "copilot-instructions.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\README.md",
+      "label": "README.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\core\\core-ai-team-dev.agent.md",
+      "label": "core-ai-team-dev.agent.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\core\\core-atlassian-jira.agent.md",
+      "label": "core-atlassian-jira.agent.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\core\\core-output-polisher.agent.md",
+      "label": "core-output-polisher.agent.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\core\\core-structure-monitor.agent.md",
+      "label": "core-structure-monitor.agent.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\dp\\dp-analyst.agent.md",
+      "label": "dp-analyst.agent.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\dyn\\dyn-analyst.agent.md",
+      "label": "dyn-analyst.agent.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\dyn\\dyn-dql-assistant.agent.md",
+      "label": "dyn-dql-assistant.agent.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\ops\\ops-daily-summary.agent.md",
+      "label": "ops-daily-summary.agent.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\ops\\ops-incident-responder.agent.md",
+      "label": "ops-incident-responder.agent.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\instructions\\core-markdown-style.instructions.md",
+      "label": "core-markdown-style.instructions.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\instructions\\core-naming-conventions.instructions.md",
+      "label": "core-naming-conventions.instructions.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\prompts\\core\\core-structure-monitor.prompt.md",
+      "label": "core-structure-monitor.prompt.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\prompts\\dp\\dp-analyst.prompt.md",
+      "label": "dp-analyst.prompt.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\prompts\\dyn\\dyn-chatbot.prompt.md",
+      "label": "dyn-chatbot.prompt.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-auto-sync\\SKILL.md",
+      "label": "SKILL.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-gh-cli\\SKILL.md",
+      "label": "SKILL.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-naming-conventions\\SKILL.md",
+      "label": "SKILL.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-output-polisher\\SKILL.md",
+      "label": "SKILL.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-structure-monitor\\SKILL.md",
+      "label": "SKILL.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\dp-analysis\\SKILL.md",
+      "label": "SKILL.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\dyn-queries\\SKILL.md",
+      "label": "SKILL.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\ops-incident\\SKILL.md",
+      "label": "SKILL.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\ops-metrics-thresholds\\SKILL.md",
+      "label": "SKILL.md",
+      "file_type": "document"
+    },
+    {
+      "id": "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\ops-report-templates\\SKILL.md",
+      "label": "SKILL.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [
+    {
+      "source": "claude_settings_local_json",
+      "target": "claude_settings_local_permissions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude\\settings.local.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_settings_local_permissions",
+      "target": "claude_settings_local_permissions_allow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude\\settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_settings_local_permissions_allow",
+      "target": "ref_bash_git_add",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude\\settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "claude_settings_local_permissions_allow",
+      "target": "ref_bash_git_commit_m",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude\\settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "claude_settings_local_permissions_allow",
+      "target": "ref_bash_git_push",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude\\settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "claude_settings_local_permissions_allow",
+      "target": "ref_webfetch_domain_awesome_copilot_github_com",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude\\settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "claude_settings_local_permissions_allow",
+      "target": "ref_webfetch_domain_github_com",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude\\settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "claude_settings_local_permissions_allow",
+      "target": "ref_bash_gh_api",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude\\settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "claude_settings_local_permissions_allow",
+      "target": "ref_webfetch_domain_raw_githubusercontent_com",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude\\settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "claude_settings_local_permissions_allow",
+      "target": "ref_bash_git_check_ignore",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude\\settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vscode_settings_json",
+      "target": "vscode_settings_chat_tools_terminal_autoapprove",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".vscode\\settings.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "vscode_settings_chat_tools_terminal_autoapprove",
+      "target": "vscode_settings_chat_tools_terminal_autoapprove_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".vscode\\settings.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "vscode_settings_chat_tools_terminal_autoapprove_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues",
+      "target": "vscode_settings_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues_approve",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".vscode\\settings.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "vscode_settings_chat_tools_terminal_autoapprove_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues",
+      "target": "vscode_settings_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues_matchcommandline",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".vscode\\settings.json",
+      "source_location": "L5",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

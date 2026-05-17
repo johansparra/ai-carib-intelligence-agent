@@ -60,3 +60,5 @@ El agente `structure-monitor` funciona automáticamente:
 **No requiere activación manual** — trabaja transparentemente en segundo plano.
 
 Para ejecutarlo manualmente: *"Sincroniza la documentación con los cambios actuales"*
+
+Última sincronización: 2026-05-16

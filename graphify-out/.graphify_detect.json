@@ -1,0 +1,48 @@
+{
+  "files": {
+    "code": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.claude\\settings.local.json",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.vscode\\settings.json"
+    ],
+    "document": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\CLAUDE.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\Comandos.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\README.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\copilot-instructions.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\README.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\core\\core-ai-team-dev.agent.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\core\\core-atlassian-jira.agent.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\core\\core-output-polisher.agent.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\core\\core-structure-monitor.agent.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\dp\\dp-analyst.agent.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\dyn\\dyn-analyst.agent.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\dyn\\dyn-dql-assistant.agent.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\ops\\ops-daily-summary.agent.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\ops\\ops-incident-responder.agent.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\instructions\\core-markdown-style.instructions.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\instructions\\core-naming-conventions.instructions.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\prompts\\core\\core-structure-monitor.prompt.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\prompts\\dp\\dp-analyst.prompt.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\prompts\\dyn\\dyn-chatbot.prompt.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-auto-sync\\SKILL.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-gh-cli\\SKILL.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-naming-conventions\\SKILL.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-output-polisher\\SKILL.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-structure-monitor\\SKILL.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\dp-analysis\\SKILL.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\dyn-queries\\SKILL.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\ops-incident\\SKILL.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\ops-metrics-thresholds\\SKILL.md",
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\ops-report-templates\\SKILL.md"
+    ],
+    "paper": [],
+    "image": [],
+    "video": []
+  },
+  "total_files": 31,
+  "total_words": 23971,
+  "needs_graph": false,
+  "warning": "Corpus is ~23,971 words - fits in a single context window. You may not need a graph.",
+  "skipped_sensitive": [],
+  "graphifyignore_patterns": 0
+}

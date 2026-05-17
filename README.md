@@ -198,4 +198,6 @@ Para forzar una pasada del Structure Monitor:
 Sincroniza la documentación con los cambios actuales
 ```
 
+Última sincronización: 2026-05-16
+
 O ejecutar `/structure-monitor-sync` desde Copilot.

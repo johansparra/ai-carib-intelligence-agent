@@ -1,0 +1,145 @@
+{
+  "communities": {
+    "0": [
+      "claude_settings_local_json",
+      "claude_settings_local_permissions",
+      "claude_settings_local_permissions_allow"
+    ],
+    "1": [
+      "vscode_settings_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues_approve",
+      "vscode_settings_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues_matchcommandline",
+      "vscode_settings_chat_tools_terminal_autoapprove_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues"
+    ],
+    "2": [
+      "vscode_settings_chat_tools_terminal_autoapprove",
+      "vscode_settings_json"
+    ],
+    "3": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.claude\\settings.local.json"
+    ],
+    "4": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.vscode\\settings.json"
+    ],
+    "5": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\CLAUDE.md"
+    ],
+    "6": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\Comandos.md"
+    ],
+    "7": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\README.md"
+    ],
+    "8": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\copilot-instructions.md"
+    ],
+    "9": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\README.md"
+    ],
+    "10": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\core\\core-ai-team-dev.agent.md"
+    ],
+    "11": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\core\\core-atlassian-jira.agent.md"
+    ],
+    "12": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\core\\core-output-polisher.agent.md"
+    ],
+    "13": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\core\\core-structure-monitor.agent.md"
+    ],
+    "14": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\dp\\dp-analyst.agent.md"
+    ],
+    "15": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\dyn\\dyn-analyst.agent.md"
+    ],
+    "16": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\dyn\\dyn-dql-assistant.agent.md"
+    ],
+    "17": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\ops\\ops-daily-summary.agent.md"
+    ],
+    "18": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\agents\\ops\\ops-incident-responder.agent.md"
+    ],
+    "19": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\instructions\\core-markdown-style.instructions.md"
+    ],
+    "20": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\instructions\\core-naming-conventions.instructions.md"
+    ],
+    "21": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\prompts\\core\\core-structure-monitor.prompt.md"
+    ],
+    "22": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\prompts\\dp\\dp-analyst.prompt.md"
+    ],
+    "23": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\prompts\\dyn\\dyn-chatbot.prompt.md"
+    ],
+    "24": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-auto-sync\\SKILL.md"
+    ],
+    "25": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-gh-cli\\SKILL.md"
+    ],
+    "26": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-naming-conventions\\SKILL.md"
+    ],
+    "27": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-output-polisher\\SKILL.md"
+    ],
+    "28": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\core-structure-monitor\\SKILL.md"
+    ],
+    "29": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\dp-analysis\\SKILL.md"
+    ],
+    "30": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\dyn-queries\\SKILL.md"
+    ],
+    "31": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\ops-incident\\SKILL.md"
+    ],
+    "32": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\ops-metrics-thresholds\\SKILL.md"
+    ],
+    "33": [
+      "D:\\Claude\\Copilot\\ai-carib-intelligence-agent\\.github\\skills\\ops-report-templates\\SKILL.md"
+    ]
+  },
+  "cohesion": {},
+  "god_nodes": [
+    {
+      "id": "vscode_settings_chat_tools_terminal_autoapprove_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues",
+      "label": "/^cd /d d:\\\\\\\\Claude\\\\\\\\Copilot\\\\\\\\ai-carib-intelligence-agent; python -c 'import re, pathlib; root=pathlib\\\\.Path\\\\(\\\"\\\\.\\\"\\\\)\\\\.resolve\\\\(\\\\); files=sorted\\\\(root\\\\.glob\\\\(\\\"\\\\*\\\\*/\\\\*\\\\.md\\\"\\\\)\\\\); found=False; \\nfor p in files:\\n    text=p\\\\.read_text\\\\(encoding=\\\"utf-8\\\"\\\\)\\n    lines=text\\\\.splitlines\\\\(\\\\)\\n    bad=\\\\[\\\\]\\n    for i,line in enumerate\\\\(lines\\\\):\\n        if re\\\\.match\\\\(r\\\"\\\\^\\\\(#\\\\{1,6\\\\}\\\\)\\\\\\\\s\\\\+\\\\[\\\\^#\\\\]\\\\.\\\\*\\\\$\\\", line\\\\):\\n            if i\\\\+1 < len\\\\(lines\\\\) and lines\\\\[i\\\\+1\\\\]\\\\.strip\\\\(\\\\) != \\\"\\\":\\n                bad\\\\.append\\\\(\\\\(i\\\\+1,line\\\\)\\\\)\\n    if bad:\\n        found=True\\n        print\\\\(p\\\\)\\n        for lineno,line in bad:\\n            print\\\\(f\\\"  \\\\{lineno\\\\}: \\\\{line\\\\}\\\"\\\\)\\nif not found:\\n    print\\\\(\\\"no-issues\\\"\\\\)'$/",
+      "degree": 3
+    },
+    {
+      "id": "claude_settings_local_permissions",
+      "label": "permissions",
+      "degree": 2
+    },
+    {
+      "id": "vscode_settings_chat_tools_terminal_autoapprove",
+      "label": "chat.tools.terminal.autoApprove",
+      "degree": 2
+    },
+    {
+      "id": "claude_settings_local_permissions_allow",
+      "label": "allow",
+      "degree": 1
+    },
+    {
+      "id": "vscode_settings_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues_approve",
+      "label": "approve",
+      "degree": 1
+    },
+    {
+      "id": "vscode_settings_cd_d_d_claude_copilot_ai_carib_intelligence_agent_python_c_import_re_pathlib_root_pathlib_path_resolve_files_sorted_root_glob_md_found_false_nfor_p_in_files_n_text_p_read_text_encoding_utf_8_n_lines_text_splitlines_n_bad_n_for_i_line_in_enumerate_lines_n_if_re_match_r_1_6_s_line_n_if_i_1_len_lines_and_lines_i_1_strip_n_bad_append_i_1_line_n_if_bad_n_found_true_n_print_p_n_for_lineno_line_in_bad_n_print_f_lineno_line_nif_not_found_n_print_no_issues_matchcommandline",
+      "label": "matchCommandLine",
+      "degree": 1
+    }
+  ],
+  "surprises": []
+}
