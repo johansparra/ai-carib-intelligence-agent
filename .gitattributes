@@ -1,0 +1,8 @@
+# GitHub Linguist overrides
+# Este repositorio es 100% configuración en Markdown (agentes, skills, prompts).
+# Por defecto Linguist excluye .md como "documentation"; lo forzamos a contar.
+*.md linguist-detectable=true
+*.md linguist-documentation=false
+
+# Artefactos generados por graphify — no deben contar como lenguaje del repo
+graphify-out/** linguist-generated=true
